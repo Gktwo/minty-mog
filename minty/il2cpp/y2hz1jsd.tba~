@@ -1,0 +1,56 @@
+﻿#pragma once
+
+enum class CursorLockMode__Enum : int32_t {
+    None = 0x00000000,
+    Locked = 0x00000001,
+    Confined = 0x00000002,
+};
+//// Namespace: Sdw.Dungeon.Map.Domain
+enum class PlayerStateId__Enum : int32_t {
+    Idle = 0x00000000, //闲置
+    Move = 0x00000001,
+};
+
+//Namespace: CaravanWa.Shared.MasterTable
+enum class BossType__Enum : int32_t {
+    None = 0x00000000,
+    Boss = 0x00000001,
+    GuildBoss = 0x00000002, //帮会老大
+};
+
+enum class EnemyType__Enum : int32_t {
+    Normal = 0x00000000,
+    Boss = 0x00000001,
+    ImmortalBoss = 0x00000002, //精英怪
+};
+
+enum class Role__Enum : int32_t {
+    None = 0x00000000,
+    Tank = 0x00000001,
+    Attacker = 0x00000002,
+    Healer = 0x00000003,
+};
+
+// Namespace: Sdw.Enhancement 增效
+enum class AbilityType__Enum : int32_t {
+    DamageLimit = 0x00000000,
+    OverHeal = 0x00000001,
+
+};
+
+// Namespace: Sdw.SkillViewer
+enum class ActorType__Enum : int32_t {
+    None = 0x00000000,
+    Playable = 0x00000001,
+    EnemyOnly = 0x00000002,
+};
+
+enum class CutsceneType__Enum : int32_t {
+    None = 0x00000000,
+    Skill = 0x00000001,
+    SpSkillEnd = 0x00000002,
+    Exit= 0x00000003,
+    Appearance= 0x00000004, 
+    Winning= 0x00000005, 
+    SummonAppear= 0x00000006,
+};
