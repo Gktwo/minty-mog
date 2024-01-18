@@ -2,11 +2,12 @@
 # MINTY-MOG
 A Magic of the Eminence in Shadow: Master of Garden
 ## Functions
-Godmode(x)
-Demagehack(x)
-hideUI
-UnlockFPS
-Gamespeed
+- Godmode(x)
+- Demagehack(x)
+- hideUI
+- UnlockFPS
+- Gamespeed
+
 ## Game version
 [TW](https://shadow.softstargames.com.tw/download)
 ## Building instructions
