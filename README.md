@@ -1,7 +1,8 @@
 ﻿[EN](README.md)
 # M
 dynamically-loading tool for "The Eminence in Shadow: Master of Garden"
-
+## Game version
+[TW](https://shadow.softstargames.com.tw/download)
 ## Building instructions
 1. Download Visual Studio Community 2022
 2. Build as Release x64. Do not target debug, and do not target x86 or Win32.

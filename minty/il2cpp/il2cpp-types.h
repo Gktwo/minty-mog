@@ -2288,10 +2288,30 @@ typedef union Il2CppSingle_float
     // * Application types from method calls
     // ******************************************************************************
 
-//UnityEngine_GameObject
-
+//struct UnityEngine_GameObject_Fields
+struct __declspec(align(8)) Object__Fields {
+    void* m_CachedPtr;
+};
+struct Object_VTable {
+    VirtualInvokeData _0_Equals;
+    VirtualInvokeData _1_Finalize;
+    VirtualInvokeData _2_GetHashCode;
+    VirtualInvokeData _3_ToString;
+};
+struct Object_c {
+    Il2CppClass_1 _1;
+    struct Object_StaticFields* static_fields;
+    Il2CppRGCTXData* rgctx_data;
+    Il2CppClass_2 _2;
+    Object_VTable vtable;
+};
+struct Object {
+    struct Object__Class* klass;
+    MonitorData* monitor;
+    struct Object__Fields fields;
+};
 struct GameObject__Fields {
-    struct Object__Fields ;
+    struct Object__Fields _ ;
 };
 //_o
 struct GameObject {
@@ -2317,15 +2337,7 @@ struct GameObject__Class {
     struct GameObject__VTable vtable;
 };
 
-struct __declspec(align(8)) Object__Fields {
-    void* m_CachedPtr;
-};
 
-struct Object {
-    struct Object__Class* klass;
-    MonitorData* monitor;
-    struct Object__Fields fields;
-};
 
 struct Component__Fields {
     struct Object__Fields _;

@@ -5,10 +5,10 @@
 #include "../functions/player/demagehack.h"
 #include "../functions/world/SetTimeScale.h"
 
-//#include "../functions/visuals/HideUI.h"
+#include "../functions/visuals/HideUI.h"
 
-//#include "../functions/visuals/UnlockFPS.h"
-//#include "../functions/visuals/GameSpeed.h"
+#include "../functions/visuals/UnlockFPS.h"
+
 
 #include "../functions/debug/Debug.h"
 
@@ -37,14 +37,13 @@ void Init() {
 
 
 
- //INIT_FUNC(HideUI);
+ INIT_FUNC(HideUI);
 
 
-// INIT_FUNC(UnlockFPS);
+ INIT_FUNC(UnlockFPS);
 
  
 
-  //INIT_FUNC(GameSpeed);
 
 }
 

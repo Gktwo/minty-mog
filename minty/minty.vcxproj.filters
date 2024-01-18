@@ -82,6 +82,8 @@
     <ClCompile Include="Functions\Player\demagehack.cpp" />
     <ClCompile Include="Functions\World\SetTimeScale.cpp" />
     <ClCompile Include="Functions\Debug\debug.cpp" />
+    <ClCompile Include="Functions\visuals\HideUI.cpp" />
+    <ClCompile Include="Functions\visuals\UnlockFPS.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\MainGUI.h" />
@@ -207,6 +209,8 @@
     <ClInclude Include="Functions\Player\demagehack.h" />
     <ClInclude Include="Functions\World\SetTimeScale.h" />
     <ClInclude Include="Functions\Debug\debug.h" />
+    <ClInclude Include="Functions\visuals\HideUI.h" />
+    <ClInclude Include="Functions\visuals\UnlockFPS.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="il2cpp\detours.lib" />

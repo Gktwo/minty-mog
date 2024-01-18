@@ -1,7 +1,7 @@
 ﻿#include "UnlockFPS.h"
 
 namespace cheat {
-	static void onUpdate_2(app::GameManager* __this, app::MethodInfo* method);
+	static void Global_Update3_Hook(app::UnityEngine_EventSystems_EventSystem_o* __this, app::MethodInfo* method);
 
 	UnlockFPS::UnlockFPS() {
 		f_Enabled = config::getValue("functions:UnlockFPS", "enabled", false);
@@ -10,7 +10,7 @@ namespace cheat {
 		f_FpsLimit = config::getValue("functions:UnlockFPS:Limit", "value", 60);
 		f_Hotkey = Hotkey("functions:UnlockFPS");
 
-		HookManager::install(app::GameManager_Update, onUpdate_2);
+		HookManager::install(app::Global_Update, Global_Update3_Hook);
 	}
 
 	UnlockFPS& UnlockFPS::getInstance() {
@@ -49,7 +49,7 @@ namespace cheat {
 		return _("Visuals");
 	}
 
-	void onUpdate_2(app::GameManager* __this, app::MethodInfo* method) {
+	void Global_Update3_Hook(app::UnityEngine_EventSystems_EventSystem_o* __this, app::MethodInfo* method) {
 		auto& unlockFPS = UnlockFPS::getInstance();
 		bool enabled = unlockFPS.f_Enabled.getValue();
 		int fps = unlockFPS.f_Fps.getValue();
@@ -68,6 +68,6 @@ namespace cheat {
 			}
 		}
 
-		CALL_ORIGIN(onUpdate_2, __this, method);
+		CALL_ORIGIN(Global_Update3_Hook, __this, method);
 	}
 }
