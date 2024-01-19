@@ -16,8 +16,9 @@ A Magic of the Eminence in Shadow: Master of Garden
 2. Build as Release x64. Do not target debug, and do not target x86 or Win32.
 3. You will find a folder called `x64` when opening file explorer to the solution. Inisde there, you can find a folder called `Release`, where the built files are located.
 
-## Releases
-Download the latest versions [here](https://github.com/Gktwo/minty-mog/releases).
+## Download
+Download the releases versions [releases](https://github.com/Gktwo/minty-mog/releases).
+Download the latest versions [latest](https://github.com/Gktwo/minty-mog/actions).
 
 ## Disclaimer
 DISCLAIMER! We are not responsible for any actions you perform or recieve e.g. ban. 
