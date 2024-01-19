@@ -42,7 +42,7 @@ namespace cheat {
 
 	void UnlockFPS::Status() {
 		if (f_Enabled.getValue())
-			ImGui::Text(_("Unlock FPS: %i"), f_Fps);
+			ImGui::Text("Unlock FPS: %i", f_Fps.getValue());
 	}
 
 	std::string UnlockFPS::getModule() {

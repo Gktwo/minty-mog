@@ -1,4 +1,4 @@
-﻿#include "Discord.h"
+#include "Discord.h"
 
 void Discord::Initialize() {
     DiscordEventHandlers Handle;
@@ -9,12 +9,12 @@ void Discord::Initialize() {
 void Discord::Update() {
     DiscordRichPresence discordPresence;
     memset(&discordPresence, 0, sizeof(discordPresence));
-    discordPresence.state = "Hacking MasterofGarden <333";
+    discordPresence.state = "Hacking MHY <333";
     time_t CurrentTime = time(0);
     discordPresence.startTimestamp = CurrentTime;
     discordPresence.largeImageText = "https://linktr.ee/kindawindytoday";
     discordPresence.largeImageKey = "idol";
     discordPresence.smallImageKey = "gensh";
-    discordPresence.smallImageText = "MasterofGarden";
+    discordPresence.smallImageText = "Genshin Impact";
     Discord_UpdatePresence(&discordPresence);
 }

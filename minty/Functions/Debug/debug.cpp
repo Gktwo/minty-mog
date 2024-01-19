@@ -55,7 +55,7 @@ namespace cheat {
 
     void Debug::Status() {
 	if (f_Enabled.getValue())
-	    ImGui::Text("Debug");
+	    ImGui::Text(_("Debug"));
     }
 
     std::string Debug::getModule() {

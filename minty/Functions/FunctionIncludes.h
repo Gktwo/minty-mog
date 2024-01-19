@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include "Function.h"
 #include "../utils/GuiUtils.h"

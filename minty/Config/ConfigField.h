@@ -32,4 +32,8 @@ public:
 	void setValue(T value) {
 		this->value = value;
 	}
+
+	operator bool() {
+		return this->value;
+	}
 };

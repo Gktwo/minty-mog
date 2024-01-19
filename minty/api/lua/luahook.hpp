@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <Windows.h>
 #include <cstdint>
@@ -29,3 +29,8 @@ std::optional<std::string> compile(lua_State* L, const char* script);
 void get_gi_L();
 void luahookfunc(const char* charLuaScript);
 DWORD WINAPI initLua(LPVOID lpReserved);
+
+class LuaHook {
+public:
+    inline static std::string last_lua_string;
+};

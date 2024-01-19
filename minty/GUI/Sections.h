@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <string>
 #include <vector>
@@ -9,3 +9,4 @@ void Init();
 void Outer();
 
 void DrawSection(const std::string& sectionName);
+void Status();

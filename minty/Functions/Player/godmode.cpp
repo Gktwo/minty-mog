@@ -41,7 +41,7 @@ namespace cheat {
 
     void GodMode::Status() {
 	if (f_Enabled.getValue())
-	    ImGui::Text("GodMode");
+	    ImGui::Text(_("GodMode"));
     }
 
     std::string GodMode::getModule() {

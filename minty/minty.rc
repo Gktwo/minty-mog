@@ -50,7 +50,9 @@ END
 // RCDATA
 //
 
-IDR_RCDATA1             RCDATA                  "themes\\fonts\\MiSans-Regular.ttf"
+R_FONT_CN             RCDATA                  "themes\\fonts\\MiSans-Regular.ttf"
+
+R_FONT_RU             RCDATA                  "themes\\fonts\\russia.ttf"
 
 R_LANGUAGES             RCDATA                  "resources\\translations.json"
 

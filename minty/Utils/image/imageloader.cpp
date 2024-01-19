@@ -1,4 +1,4 @@
-﻿#include "ImageLoader.h"
+#include "ImageLoader.h"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
@@ -46,7 +46,7 @@ std::optional<ImageLoader::ImageData> ImageLoader::GetImage(const std::string& i
 }
 
 bool LoadEx(const char* name, const char* type, LPBYTE& pDest, DWORD& size) {
-    HMODULE s_Handle = GetModuleHandleA("minty-MOG.dll");
+    HMODULE s_Handle = GetModuleHandleA("minty-mog.dll");
     if (s_Handle == nullptr)
         return false;
 

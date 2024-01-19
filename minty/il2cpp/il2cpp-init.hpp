@@ -86,8 +86,8 @@ VOID init_il2cpp() {
 
 			#define DO_TYPEDEF(a, b, n) n ## __TypeInfo = (n ## __Class**) (baseAddress + a)
 				#include "il2cpp-types.h"
-                                #include "il2cpp-enum.h"
-                                #include "il2cpp-type2.h"
+                #include "il2cpp-enum.h"
+
 			#undef DO_TYPEDEF
 
 			#define DO_UP_FUNC(a, r, n, p) n = (r (*) p)(unityPlayerAddress + a)

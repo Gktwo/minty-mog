@@ -1,4 +1,4 @@
-#include "InitGui.h"
+﻿#include "InitGui.h"
 
 float alpha = 0;
 void MergeIconsWithLatestFont(float font_size, bool FontDataOwnedByAtlas) {
@@ -12,6 +12,7 @@ void MergeIconsWithLatestFont(float font_size, bool FontDataOwnedByAtlas) {
     ImGui::GetIO().Fonts->AddFontFromMemoryTTF((void*)fa_solid_900, sizeof(fa_solid_900), font_size, &icons_config, icons_ranges);
 }
 
+
 void gui::InitImGui(HWND window, ID3D11Device* pDevice, ID3D11DeviceContext* pContext) {
     ImGui::CreateContext();
 
@@ -22,18 +23,15 @@ void gui::InitImGui(HWND window, ID3D11Device* pDevice, ID3D11DeviceContext* pCo
     ImGui_ImplDX11_Init(pDevice, pContext);
 
     ImGui::GetIO().ImeWindowHandle = window;
+
     ImFontConfig font_cfg;
-
-    
-
     font_cfg.FontDataOwnedByAtlas = false;
-
     ImGui::GetIO().Fonts->AddFontFromMemoryTTF((void*)tahoma, sizeof(tahoma), 17.f, &font_cfg);
     // init notify
     //MergeIconsWithLatestFont(16.f, false);
     LoadThemes();
-    LoadFonts();
-    LoadFontFromResources(font_cfg, MAKEINTRESOURCEW(102), 20.f);
+    //LoadFonts();
+    LoadFontFromResources(font_cfg, MAKEINTRESOURCEW(R_FONT_CN), 20.f);
     Init();
 }
 
@@ -42,26 +40,28 @@ void gui::Render() {
     ImGui_ImplDX11_NewFrame();
     ImGui::NewFrame();
     Outer();
+    Status();
 
     auto& settings = cheat::Settings::getInstance();
     static double startTime = ImGui::GetTime();
-    static bool prevShowMenu = settings.f_ShowMenu;
+    static bool prevShowMenu = settings.f_ShowMenu.getValue();
     const float animDuration = settings.f_AnimationDuration.getValue();
 
-    if (settings.f_ShowMenu != prevShowMenu) {
-        startTime = ImGui::GetTime(); // Reset startTime when the menu state changes
-        prevShowMenu = settings.f_ShowMenu;
+    if (settings.f_ShowMenu.getValue() != prevShowMenu) {
+        startTime = ImGui::GetTime(); 
+        prevShowMenu = settings.f_ShowMenu.getValue();
     }
 
-    float alpha = settings.f_ShowMenu ? min(1.0f, (ImGui::GetTime() - startTime) / animDuration) : max(0.0f, 1.0f - (ImGui::GetTime() - startTime) / animDuration);
+    float alpha = settings.f_ShowMenu.getValue() ? min(1.0f, (ImGui::GetTime() - startTime) / animDuration) : max(0.0f, 1.0f - (ImGui::GetTime() - startTime) / animDuration);
 
     ImGui::PushStyleVar(ImGuiStyleVar_Alpha, alpha);
 
-    if (settings.f_ShowMenu || alpha > 0.0f)
+    if (settings.f_ShowMenu.getValue() || alpha > 0.0f)
         gui::FrameLoadGui();
 
     ImGui::PopStyleVar();
-    //ImGui::GetIO().MouseDrawCursor = settings.f_ShowMenu;
 
+    //ImGui::GetIO().MouseDrawCursor = settings.f_ShowMenu.getValue();
+    
     ImGui::Render();
 }

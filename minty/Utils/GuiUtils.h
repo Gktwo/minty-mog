@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #define IMGUI_DEFINE_MATH_OPERATORS
 #include <Windows.h>
@@ -20,14 +20,16 @@ void HelpMarker(const char* desc);
     }
 
 template <typename T>
-void ConfigCheckbox(const char* name, ConfigField<T>& field, const char* description = nullptr) {
+bool ConfigCheckbox(const char* name, ConfigField<T>& field, const char* description = nullptr) {
     T& value = field.getValue();
 
     if (ImGui::Checkbox(name, &value)) {
         field.setValue(value);
         config::setValue(field, value);
+	return value;
     }
     END_WIDGET();
+    return false;
 }
 
 bool BeginGroupPanel(const char* label, bool node = false, const ImVec2& size = ImVec2(-1.0f, 0.0f));
@@ -35,48 +37,60 @@ void EndGroupPanel();
 
 
 template <typename T>
-void ConfigInputText(const char* name, ConfigField<T>& field, const char* description = nullptr) {
+bool ConfigInputText(const char* name, ConfigField<T>& field, const char* description = nullptr) {
     T& value = field.getValue();
 
     if (ImGui::InputText(name, &value)) {
         field.setValue(value);
         config::setValue(field, value);
+	return true;
     }
     END_WIDGET();
+    return false;
 }
 
 template <typename T>
-void ConfigSliderInt(const char* name, ConfigField<T>& field, const int min, const int max, const char* description = nullptr) {
+bool ConfigSliderInt(const char* name, ConfigField<T>& field, const int min, const int max, const char* description = nullptr) {
     T& value = field.getValue();
 
     if (ImGui::SliderInt(name, &value, min, max)) {
         field.setValue(value);
         config::setValue(field, value);
+	return true;
     }
     END_WIDGET();
+    return false;
 }
 
 template <typename T>
-void ConfigDragInt(const char* name, ConfigField<T>& field, const int step, const int min, const int max, const char* description = nullptr) {
+bool ConfigDragInt(const char* name, ConfigField<T>& field, const int step, const int min, const int max, const char* description = nullptr) {
     T& value = field.getValue();
 
     if (ImGui::DragInt(name, &value, (float) step, min, max, nullptr, ImGuiSliderFlags_AlwaysClamp)) {
         field.setValue(value);
         config::setValue(field, value);
+	return true;
     }
     END_WIDGET();
+    return false;
 }
 
 template <typename T>
-void ConfigSliderFloat(const char* name, ConfigField<T>& field, const float min, const float max, const char* description = nullptr) {
+bool ConfigSliderFloat(const char* name, ConfigField<T>& field, const float min, const float max, const char* description = nullptr) {
     T& value = field.getValue();
 
     if (ImGui::SliderFloat(name, &value, min, max)) {
         field.setValue(value);
         config::setValue(field, value);
+	return true;
     }
     END_WIDGET();
+    return false;
 }
+
+
+void ConfigComboLanguage(ConfigField<int>& f_Language);
+
 
 void AddUnderLine(ImColor col_);
 void TextURL(const char* name_, const char* URL_, bool SameLineBefore_, bool SameLineAfter_);

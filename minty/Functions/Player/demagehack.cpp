@@ -44,7 +44,7 @@ namespace cheat {
 
     void DemageHack::Status() {
 	if (f_Enabled.getValue())
-	    ImGui::Text("DemageHack");
+	    ImGui::Text(_("DemageHack"));
     }
 
     std::string DemageHack::getModule() {

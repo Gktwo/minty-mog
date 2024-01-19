@@ -1,9 +1,8 @@
-﻿#pragma once
+#pragma once
 
 #include <Windows.h>
 #include <optional>
 #include <libloaderapi.h>
-
 
 #include "../../api/imgui/ImGui/imgui.h"
 

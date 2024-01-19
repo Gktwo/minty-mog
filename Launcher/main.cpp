@@ -87,7 +87,7 @@ void StartAndInject(std::string exe_path, std::filesystem::path dll_path, std::s
     PROCESS_INFORMATION proc_info{};
     STARTUPINFOA startup_info{};
 
-    
+
     std::string command_line = exe_path + " " + startupArguments;
 
     if (CreateProcessA(nullptr, const_cast<char*>(command_line.c_str()), nullptr, nullptr, FALSE, 0, nullptr, nullptr, &startup_info, &proc_info)) {
@@ -115,7 +115,7 @@ LRESULT WINAPI WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 int main() {
     nlohmann::json cfg;
     std::optional<fs::path> current_dir = this_dir();
-    std::filesystem::path dll_path = current_dir.value() / "minty-MOG.dll";
+    std::filesystem::path dll_path = current_dir.value() / "minty-mog.dll";
 
     if (!fs::is_regular_file(dll_path)) {
         printf("Minty-MOG not found\n");
@@ -135,7 +135,7 @@ int main() {
             // Write the executable path to the settings file
             cfg["general"]["execPath"] = exe_path;
             cfg["functions"]["Settings"]["startupArguments"] = "";
-	   
+
 
             settings_file << cfg.dump(4) << std::endl;
             exe_path = cfg["general"]["execPath"];
@@ -164,24 +164,27 @@ int main() {
                         cfg["general"]["execPath"] = exe_path;
                         settings_file << cfg.dump(4) << std::endl;
                         settings_file.close();
-                    } else {
+                    }
+                    else {
                         std::cout << "Error: Unable to open settings file." << std::endl;
                         return 1;
                     }
-                } else {
+                }
+                else {
                     std::cout << "Error: Unable to open file dialog." << std::endl;
                     return 1;
                 }
 
                 exe_path = cfg["general"]["execPath"];
-		startupArguments = cfg["functions"]["Settings"]["startupArguments"];
-		//if (cfg["functions"]["Settings"]["mobileMode"] == true)
-		//    StartAndInject(exe_path, dll_path, mobileMode + " " + startupArguments); 
-  //              else
+                startupArguments = cfg["functions"]["Settings"]["startupArguments"];
+                //if (cfg["functions"]["Settings"]["mobileMode"] == true)
+                //    StartAndInject(exe_path, dll_path, mobileMode + " " + startupArguments); 
+          //              else
                 StartAndInject(exe_path, dll_path, startupArguments);
                 return 0;
             }
-        } else {
+        }
+        else {
             std::cout << "Error: Unable to create config file." << std::endl;
         }
     }
@@ -221,20 +224,22 @@ int main() {
                 cfg["general"]["execPath"] = exe_path;
                 settings_file << cfg.dump(4) << std::endl;
                 settings_file.close();
-            } else {
+            }
+            else {
                 std::cout << "Error: Unable to open settings file." << std::endl;
                 return 1;
             }
-        } else {
+        }
+        else {
             std::cout << "Error: Unable to open file dialog." << std::endl;
             return 1;
         }
         exe_path = cfg["general"]["execPath"];
     }
- //   if (cfg["functions"]["Settings"]["mobileMode"] == true)
-	//StartAndInject(exe_path, dll_path, mobileMode + " " + startupArguments);
- //   else
-        StartAndInject(exe_path, dll_path, startupArguments);
+    //   if (cfg["functions"]["Settings"]["mobileMode"] == true)
+       //StartAndInject(exe_path, dll_path, mobileMode + " " + startupArguments);
+    //   else
+    StartAndInject(exe_path, dll_path, startupArguments);
     return 0;
 }
 
@@ -267,7 +272,7 @@ bool CreateDeviceD3D(HWND hWnd) {
     // Try high-performance WARP software driver if hardware is not available.
     if (res == DXGI_ERROR_UNSUPPORTED)
         res = D3D11CreateDeviceAndSwapChain(nullptr, D3D_DRIVER_TYPE_WARP, nullptr, createDeviceFlags, featureLevelArray, 2, D3D11_SDK_VERSION, &sd, &g_pSwapChain, &g_pd3dDevice, &featureLevel, &g_pd3dDeviceContext);
-    
+
     if (res != S_OK)
         return false;
 

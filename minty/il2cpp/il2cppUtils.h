@@ -8,6 +8,19 @@ std::string il2cppi_to_string(app::String* str);
 app::String* string_to_il2cppi(std::string input);
 app::String* string_to_il2cppi(const char* input);
 
+template <typename T>
+void write(uintptr_t address, T value) {
+    DWORD oldProtection;
+    VirtualProtect(reinterpret_cast<void**>(address), sizeof(T), PAGE_EXECUTE_READWRITE, &oldProtection);
+    *reinterpret_cast<T*>(address) = value;
+    VirtualProtect(reinterpret_cast<void**>(address), sizeof(T), oldProtection, &oldProtection);
+}
+
+template <typename K>
+K read(uintptr_t address) {
+    return *reinterpret_cast<K*>(address);
+}
+
 template<typename ElementT>
 struct UniArray {
     void* klass;

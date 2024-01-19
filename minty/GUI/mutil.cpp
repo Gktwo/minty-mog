@@ -1,5 +1,4 @@
-﻿
-#include "mutil.h"
+﻿#include "mutil.h"
 
 #include <Windows.h>
 #include <shellapi.h>
@@ -16,44 +15,17 @@
 #include <iostream>
 
 
-namespace mutil
-{
-	//std::string MGetLastErrorAsString(DWORD errorId /*= 0*/)
-	//{
-	//	//Get the error message ID, if any.
-	//	DWORD errorMessageID = errorId == 0 ? ::GetLastError() : errorId;
-	//	if (errorMessageID == 0)
-	//	{
-	//		return std::string(); //No error message has been recorded
-	//	}
-
-	//	LPSTR messageBuffer = nullptr;
-
-	//	//Ask Win32 to give us the string version of that message ID.
-	//	//The parameters we pass in, tell Win32 to create the buffer that holds the message for us (because we don't yet know how long the message string will be).
-	//	size_t size = FormatMessageA(
-	//		FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
-	//		NULL, errorMessageID, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), (LPSTR)&messageBuffer, 0, NULL);
-
-	//	//Copy the error message into a std::string.
-	//	std::string message(messageBuffer, size);
-
-	//	//Free the Win32's string's buffer.
-	//	LocalFree(messageBuffer);
-
-	//	return message;
-	//}
-
+namespace mutil {
 	std::vector<uint8_t> from_hex_string(std::string string)
 	{
 		std::vector<uint8_t> ret;
 		auto HexCharToByte = [](char ch)
-		{
-			if (ch <= 0x40)
-				return ch - 48;
-			else
-				return ch - 55;
-		};
+			{
+				if (ch <= 0x40)
+					return ch - 48;
+				else
+					return ch - 55;
+			};
 
 		for (int i = 0; i < string.length(); i += 2)
 		{
@@ -83,14 +55,6 @@ namespace mutil
 		char* c = (char*)&i;
 		return (*c);
 	}
-
-	//std::string MGetModulePath(HMODULE hModule /*= nullptr*/)
-	//{
-	//	char pathOut[MAX_PATH] = {};
-	//	GetModuleFileNameA(hModule, pathOut, MAX_PATH);
-
-	//	return std::filesystem::path(pathOut).parent_path().string();
-	//}
 
 	static std::filesystem::path _currentPath;
 
@@ -153,8 +117,8 @@ namespace mutil
 		auto currPath = std::filesystem::current_path();
 
 		// common dialog box structure, setting all fields to 0 is important
-		OPENFILENAME ofn = {0};
-		TCHAR szFile[260] = {0};
+		OPENFILENAME ofn = { 0 };
+		TCHAR szFile[260] = { 0 };
 
 		// Initialize remaining fields of OPENFILENAME structure
 		ofn.lStructSize = sizeof(ofn);
@@ -369,12 +333,10 @@ namespace mutil
 		HRESULT hr = CoCreateInstance(CLSID_FileOpenDialog, NULL, CLSCTX_INPROC_SERVER, IID_PPV_ARGS(&pFileDialog));
 		if (SUCCEEDED(hr))
 		{
-			// 设置文件夹选择模式
 			DWORD options;
 			pFileDialog->GetOptions(&options);
 			pFileDialog->SetOptions(options | FOS_PICKFOLDERS);
 
-			// 设置默认文件夹
 			if (!dir.empty())
 			{
 				PIDLIST_ABSOLUTE pidl;
@@ -392,7 +354,6 @@ namespace mutil
 				}
 			}
 
-			// 显示文件夹选择对话框
 			hr = pFileDialog->Show(NULL);
 			if (SUCCEEDED(hr))
 			{
@@ -419,10 +380,8 @@ namespace mutil
 
 	void OpenFolder(const std::filesystem::path& folderPath)
 	{
-		// 构建打开文件夹的命令
 		std::string command = "explorer \"" + folderPath.string() + "\"";
 
-		// 使用 system 函数执行命令
 		int result = std::system(command.c_str());
 
 		if (result == 0)
@@ -449,11 +408,5 @@ namespace mutil
 			if (exists(backup_path))
 				std::filesystem::rename(backup_path, file_path);
 		}
-	}
-
-	void bypassAC(std::string curDir, bool restore)
-	{
-		//backup_and_rename_file(curDir + std::string("HoYoKProtect.sys"), restore);
-		// backup_and_rename_file(curDir + std::string("mhypbase.dll"), restore);
 	}
 }

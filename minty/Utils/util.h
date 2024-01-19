@@ -1,10 +1,13 @@
-#pragma once
+﻿#pragma once
 
+#include <regex>
+#include <filesystem>
 #include <string>
 #include <vector>
 #include <fstream>
 #include <sstream>
 #include <chrono>
+
 #include "Logger.h"
 
 #define SAFE_BEGIN() __try {
@@ -15,8 +18,11 @@
 #define SAFE_EEND() SAFE_ERROR(); SAFE_END();
 
 namespace util {
+	std::string getUAHash(std::string execPath);
 	std::vector<std::string> split(const std::string& content, const std::string& delimiter);
 	int64_t GetCurrentTimeMillisec();
+	std::string ConvertToWords(const std::string& input);
+	std::string FirstCharToLowercase(std::string string);
 
 	template <typename T>
 	const char* get_ptr(const T& value) {

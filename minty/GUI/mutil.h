@@ -1,12 +1,11 @@
 ﻿#pragma once
+
 #include <string>
 #include <stdexcept>
 #include <memory>
 #include <optional>
 #include <vector>
 #include <filesystem>
-
-
 
 #define LOG_LAST_ERROR(fmt, ...) mutil::LogLastError(__FILE__, __LINE__, fmt, __VA_ARGS__)
 
@@ -28,27 +27,18 @@
 #define COMPILE_TIME_CRC32_STR(STR) std::integral_constant<uint32_t, mutil::CRC32(STR, sizeof(STR) / sizeof(char) - 1)>::value
 #define COMPILE_TIME_CRC32_WSTR(STR) std::integral_constant<uint32_t, mutil::CRC32(STR, sizeof(STR) / sizeof(wchar_t) - 1)>::value
 
-
-
-
-namespace mutil 
-{
+namespace mutil {
 	std::optional<std::string> SelectFile(const char* filter, const char* title);
 	std::optional<std::string> SelectDirectory(const char* title);
-	//std::optional<std::string> GetOrSelectPath(CSimpleIni& ini, const char* section, const char* name, const char* friendName, const char* filter);
 
 	void OpenURL(const char* url);
-	//std::string MGetLastErrorAsString(DWORD errorId = 0);
 	int64_t GetCurrentTimeMillisec();
-
-	//std::string MGetModulePath(HMODULE hModule = nullptr);
 
 	void SetCurrentPath(const std::filesystem::path& curren_path);
 	std::filesystem::path GetCurrentPath();
 	std::string SelectFolder(const std::filesystem::path& dir);
 	void OpenFolder(const std::filesystem::path& folderPath);
 	void backup_and_rename_file(std::string filepath, bool restore);
-	void bypassAC(std::string curDir, bool restore);
 
 	std::vector<std::string> StringSplit(const std::string& delimiter, const std::string& content);
 	std::string SplitWords(const std::string& value);
@@ -64,7 +54,6 @@ namespace mutil
 	int64_t GetTimezoneBias();
 
 	void OpenConsole();
-
 
 	template<typename ... Args>
 	std::string string_format(const std::string& format, Args ... args)

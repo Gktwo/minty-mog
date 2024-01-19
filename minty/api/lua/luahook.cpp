@@ -92,12 +92,12 @@ void get_gi_L() {
         Sleep(50);
 
     il2cpp_base = (uintptr_t) ua;
-    g_xluaL_loadbuffer = PatternScan("GameAssembly.dll", "48 83 EC 38 E9");
+    g_xluaL_loadbuffer = PatternScan("GameAssembly.dll", "48 83 EC 38 4D 63 C0 48 C7 44 24");
     g_lua_pcall = PatternScan("GameAssembly.dll", "48 83 EC 38 33 C0 48 89 44 24 ? 48 89 44 24 ? E8 ? ? ? ? 48 83 C4 38 C3");
+
     //LOG_DEBUG("xluaL_loadbuffer: %p, rva: %p", g_xluaL_loadbuffer, g_xluaL_loadbuffer - il2cpp_base);
     //LOG_DEBUG("lua_pcall: %p, rva: %p", g_lua_pcall, g_lua_pcall - il2cpp_base);
-
-    HookManager::install((loadbuffer_ftn)g_xluaL_loadbuffer, xluaL_loadbuffer_hook);
+    HookManager::install((loadbuffer_ftn) g_xluaL_loadbuffer, xluaL_loadbuffer_hook);
 
     while (!gi_L)
         Sleep(50);

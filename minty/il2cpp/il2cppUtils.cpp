@@ -1,4 +1,4 @@
-﻿#include "il2cppUtils.h"
+#include "il2cppUtils.h"
 #include <codecvt>
 
 /*
@@ -16,7 +16,7 @@ std::string il2cppi_to_string(app::Il2CppString* str) {
 
 std::string il2cppi_to_string(app::String* str) {
     if (str == nullptr)
-	return std::string("<nullptr>");
+        return std::string("<nullptr>");
     return il2cppi_to_string(reinterpret_cast<app::Il2CppString*>(str));
 }
 

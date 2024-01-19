@@ -1,4 +1,4 @@
-﻿#include "api/directx/D3D11Hook.hpp"
+#include "api/directx/D3D11Hook.hpp"
 #include "il2cpp/il2cpp-init.hpp"
 #include "api/lua/luahook.hpp"
 #include "includes.h"

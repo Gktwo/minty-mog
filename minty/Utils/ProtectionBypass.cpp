@@ -1,4 +1,4 @@
-﻿#ifndef UNICODE
+#ifndef UNICODE
 #define UNICODE
 #endif
 
@@ -289,7 +289,7 @@ std::map<int32_t, std::string> m_CorrectSignatures;
 //}
 
 //app::Byte__Array* OnRecordUserData(int32_t nType) {
-//	/*if (m_CorrectSignatures.count(nType)) {
+//	if (m_CorrectSignatures.count(nType)) {
 //		auto byteClass = app::GetIl2Classes()[0x25];
 //		auto& content = m_CorrectSignatures[nType];
 //		auto newArrayNotByte = (app::Il2CppArray*) il2cpp_array_new(byteClass, content.size());
@@ -297,7 +297,7 @@ std::map<int32_t, std::string> m_CorrectSignatures;
 //		
 //		memmove_s(newArray->vector, content.size(), content.data(), content.size());
 //		return newArray;
-//	}*/
+//	}
 //
 //	app::Byte__Array* result = CALL_ORIGIN(RecordUserData_Hook, nType);
 //	auto resultArray = TO_UNI_ARRAY(result, byte);
@@ -325,7 +325,7 @@ std::map<int32_t, std::string> m_CorrectSignatures;
 //		"08126aeb28524e7b05d718826b6c5e4e",
 //		"b8c1d4c0f687df999270a5c2ece67e6c27",
 //		""
-//		//""
+//		""
 //	};
 //
 //	assert(type < sizeof(data) / sizeof(const char*));
@@ -355,13 +355,13 @@ std::vector<uint8_t> from_hex(std::string string) {
 	return ret;
 }
 
-//static void OnReportLuaShell(void* __this, UnityEngine_UnityString_o* type, UnityEngine_UnityString_o* value);
-//static void LuaShellManager_ReportLuaShellResult_Hook(void* __this, UnityEngine_UnityString_o* type, UnityEngine_UnityString_o* value) {
+//static void OnReportLuaShell(void* __this, app::String* type, app::String* value);
+//static void LuaShellManager_ReportLuaShellResult_Hook(void* __this, app::String* type, app::String* value) {
 //	OnReportLuaShell(__this, type, value);
 //}
-
+//
 //static bool report_sent = false;
-//void OnReportLuaShell(void* __this, UnityEngine_UnityString_o* type, UnityEngine_UnityString_o* value) {
+//void OnReportLuaShell(void* __this, app::String* type, app::String* value) {
 //	auto xor_payload = [](std::vector<uint8_t>& value_bytes) -> void {
 //		auto length = value_bytes.size() - 1;
 //		for (signed long long i = length; i >= 0; i -= 1) {
@@ -396,23 +396,21 @@ std::vector<uint8_t> from_hex(std::string string) {
 //	return 0;
 //}
 
-//void DisableLogReport() {
-//	char szProcessPath[MAX_PATH]{};
-//
-//	GetModuleFileNameA(nullptr, szProcessPath, MAX_PATH);
-//
-//	auto path = std::filesystem::path(szProcessPath);
-//	auto ProcessName = path.filename().string();
-//	ProcessName = ProcessName.substr(0, ProcessName.find_last_of('.'));
-//	//auto Astrolabe = path.parent_path() / (ProcessName + "_Data\\Plugins\\Astrolabe.dll");
-//	//auto MiHoYoMTRSDK = path.parent_path() / (ProcessName + "_Data\\Plugins\\MiHoYoMTRSDK.dll");
-//	auto NEP2 = path.parent_path() / ("NEP2.dll");
-//
-//	//CreateFileA(Astrolabe.string().c_str(), GENERIC_READ | GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
-//	//CreateFileA(MiHoYoMTRSDK.string().c_str(), GENERIC_READ | GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
-//	CreateFileA(NEP2.string().c_str(), GENERIC_READ | GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
-//	return;
-//}
+void DisableLogReport() {
+	//char szProcessPath[MAX_PATH]{};
+
+	//GetModuleFileNameA(nullptr, szProcessPath, MAX_PATH);
+
+	//auto path = std::filesystem::path(szProcessPath);
+	//auto ProcessName = path.filename().string();
+	//ProcessName = ProcessName.substr(0, ProcessName.find_last_of('.'));
+	//auto Astrolabe = path.parent_path() / (ProcessName + "_Data\\Plugins\\Astrolabe.dll");
+	//auto MiHoYoMTRSDK = path.parent_path() / (ProcessName + "_Data\\Plugins\\MiHoYoMTRSDK.dll");
+
+	//CreateFileA(Astrolabe.string().c_str(), GENERIC_READ | GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+	//CreateFileA(MiHoYoMTRSDK.string().c_str(), GENERIC_READ | GENERIC_WRITE, 0, nullptr, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+	//return;
+}
 
 //uintptr_t hTelemetry;
 //typedef __int64 (*sub_18012A580)(__int64 a1, __int64 a2);
@@ -421,30 +419,30 @@ std::vector<uint8_t> from_hex(std::string string) {
 //}
 
 void ProtectionBypass::Init() {
-//	auto& settings = cheat::Settings::getInstance();
-//
-//	if (settings.f_DisableLog.getValue()) {
-//		DisableLogReport();
-//
-//		while (hTelemetry == (uint64_t) nullptr) {
-//			Sleep(1000);
-//			hTelemetry = (uint64_t) GetModuleHandleA("telemetry.dll");
-//		}
-//
-//		HookManager::install((sub_18012A580)(hTelemetry + 0x12A580), sub_18012A580_Hook);
-//	}
+	//auto& settings = cheat::Settings::getInstance();
 
 	//if (settings.f_UseSignature.getValue()) {
 	//	HookManager::install(app::Unity_RecordUserData, RecordUserData_Hook);
 
 	//	for (int i = 0; i < 4; i++) {
 	//		app::MoleMole_SecurityModule_RecordUserData(i, nullptr);
-	//		std::string checksum = std::string((char*) app::MoleMole_SecurityModule_RecordUserData(i, nullptr)->vector,
-	//			app::MoleMole_SecurityModule_RecordUserData(i, nullptr)->max_length);
-	//		std::cout << "[DEBUG] checksum #" << i << ": " << checksum << "\n";
+	//		//std::string checksum = std::string((char*)app::MoleMole_SecurityModule_RecordUserData(i, nullptr)->vector,
+	//			//app::MoleMole_SecurityModule_RecordUserData(i, nullptr)->max_length);
+	//		//std::cout << "[DEBUG] checksum #" << i << ": " << checksum << "\n";
 	//	}
 
 	//	HookManager::install(app::RecordChecksumUserData, RecordChecksumUserData_Hook);
+	//}
+
+	//if (settings.f_DisableLog.getValue()) {
+	//	DisableLogReport();
+
+	//	while (hTelemetry == (uint64_t) nullptr) {
+	//		Sleep(1000);
+	//		hTelemetry = (uint64_t) GetModuleHandleA("telemetry.dll");
+	//	}
+
+	//	HookManager::install((sub_18012A580)(hTelemetry + 0x12A580), sub_18012A580_Hook);
 	//}
 
 	//HookManager::install(app::CrashReporter, CrashReporter_Hook);
@@ -454,5 +452,5 @@ void ProtectionBypass::Init() {
 
 	//if (settings.f_SpoofACResult.getValue())
 	//	HookManager::install(app::MoleMole_LuaShellManager_ReportLuaShellResult, LuaShellManager_ReportLuaShellResult_Hook);
-	LOG_INFO("Initialized protection bypass");
+	//LOG_INFO("Initialized protection bypass");
 }

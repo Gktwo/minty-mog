@@ -1,12 +1,12 @@
 ﻿//{{NO_DEPENDENCIES}}
-// 玛膻鬣屐 羿殡, 耦玟囗睇??Microsoft Visual C++.
-// 锐镱朦珞弪? minty.rc
-//
-#define IDR_RCDATA1                     102
-#define IDB_PNG1                        103
-#define IDR_RCDATA2                     104
 
-#define R_LANGUAGES											301
+
+#define IDB_PNG1                        103
+
+
+#define R_LANGUAGES			301
+#define R_FONT_CN                     302
+#define R_FONT_RU                     303
 
 // Next default values for new objects
 // 
