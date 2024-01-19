@@ -3,14 +3,12 @@
 #include "../FunctionIncludes.h"
 
 namespace cheat {
-    class Debug : public Function {
+    class BattleMatch : public Function {
     public:
-	ConfigField<bool> f_Enabled;
-	ConfigField<bool> f_WipeEnemies;
-	ConfigField<bool> f_time;
+	ConfigField<bool> f_Speed;
+	ConfigField<float> f_Speedvalue;
 
 	Hotkey f_Hotkey;
-	Hotkey f_Wipe;
 
 	void GUI() override;
 	void Outer() override;
@@ -18,8 +16,9 @@ namespace cheat {
 
 	std::string getModule() override;
 
-	static Debug& getInstance();
+	static BattleMatch& getInstance();
 
-	Debug();
+	BattleMatch();
     };
 }
+#pragma once

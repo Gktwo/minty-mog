@@ -9,6 +9,17 @@ using namespace app;
 //UnityEngine.EventSystems.EventSystem$$Update
 DO_APP_FUNC(0x01851940, void, Global_Update, (app::UnityEngine_EventSystems_EventSystem_o* __this, app::MethodInfo* method));
 
+//BattleLogic.BattleMatch
+DO_APP_FUNC(0x03195700, void, BattleLogic_BattleMatch__Update, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03194cf0, float, BattleLogic_BattleMatch__get_TimeScale, (app::BattleLogic_BattleMatch_o* __this));
+//DO_APP_FUNC(0x03198010, void, BattleLogic_BattleMatch__SetTimeScale, (app::BattleLogic_BattleMatch_o* __this, float a));
+DO_APP_FUNC(0x03194c50, bool, BattleLogic_BattleMatch__get_IsPause, (app::BattleLogic_BattleMatch_o* __this));
+
+
+DO_APP_FUNC(0x00adb940, app::Network_MatchId_o, BattleLogic_BattleMatch__get_MatchId, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03196e50, void*, BattleLogic_BattleMatch__WipeEnemies, (app::BattleLogic_BattleMatch_o* __this));
+
+
 
 
 //demage hack
@@ -26,14 +37,14 @@ DO_APP_FUNC(0x03192400, void, BattleLogic_BattleLogic__Update, (app::BattleLogic
 DO_APP_FUNC(0x03191ca0, void, BattleLogic_BattleLogic__set_DebugUnlockRankSkills, (bool a));
 DO_APP_FUNC(0x019dba20, void, BattleLogic_BattleLogic__set_IgnoreDamage, (app::BattleLogic_BattleLogic_o* __this, bool a));
 
-DO_APP_FUNC(0x03194300, void, BattleLogic_BattleLogicSimulateTimer__UpdateTimer, (app::BattleLogic_BattleLogicSimulateTimer_o* __this));
-DO_APP_FUNC(0x03194390, void*, BattleLogic_BattleLogicSimulateTimer__SetTimeScale, (app::BattleLogic_BattleLogicSimulateTimer_o* __this, float a));
+//DO_APP_FUNC(0x03194300, void, BattleLogic_BattleLogicSimulateTimer__UpdateTimer, (app::BattleLogic_BattleLogicSimulateTimer_o* __this));
+//DO_APP_FUNC(0x03194390, void*, BattleLogic_BattleLogicSimulateTimer__SetTimeScale, (app::BattleLogic_BattleLogicSimulateTimer_o* __this, float a));
 
 
 //godmode
-//CaravanWa.Shared.MasterTable.SkillTargetConditionMaster$$get_TeamValue
-//DO_APP_FUNC(0x00AD7220, app::SkillTargetTeam__Enum, CaravanWa_Shared_MasterTable_SkillTargetConditionMaster_get_TeamValue, (app::CaravanWa_Shared_MasterTable_SkillTargetConditionMaster* __this));
 DO_APP_FUNC(0x030580a0, void, BattleLogic_Skills_SkillPerformer__RecordMiss, (app::BattleLogic_Skills_SkillPerformer_o* __this, app::Network_SkillActionType_o a, app::BattleLogic_Models_BattleObject_o* b, app::BattleLogic_Models_BattleObject_o* c, bool d));
+DO_APP_FUNC(0x03057270, void, BattleLogic_Skills_SkillPerformer__RecordDamage, (app::BattleLogic_Skills_SkillPerformer_o* __this, float a, app::Network_SkillActionType_o b, bool c, app::BattleLogic_Skills_SkillPerformer_CalculatedParameters_o d, app::BattleLogic_Models_BattleObject_o* e, app::BattleLogic_Models_BattleObject_o* f, app::Network_Utility_SkillUsingStatus_o* g, bool h, float i));
+
 
 //BattleObject analyzer
 
@@ -130,14 +141,13 @@ DO_APP_FUNC(0x011e3990, float, Time_get_deltaTime, (app::MethodInfo* method));
 DO_APP_FUNC(0x023c40b0, float, Time_get_timeScale, (app::MethodInfo* method));
 //public static float get_timeScale() { }
 DO_APP_FUNC(0x0478cfc0, void*, Time_set_timeScale, (float time));
-//DO_APP_FUNC(0x029c7810, void, Sdw_Battle_BattleSkillTimeScalable___set_timeScale, (app::Sdw_Battle_BattleSkillTimeScalable_o* __this, float time));
 
 
 DO_APP_FUNC(0x03bcfcf0, bool*, Application_get_isFocused, ());
 //public static bool get_isFocused() { }
 DO_APP_FUNC(0x03bd01f0, void*, Application_set_targetFrameRate, (int32_t value));
 //	public static void set_targetFrameRate(int value) { }
-DO_APP_FUNC(0x03adc140, void*, QualitySettings_set_vSyncCount, (int32_t value));
+DO_APP_FUNC(0x03adc140, void*, QualitySettings_set_vSyncCount, (int32_t value));//帧率限制倍数（垂直同步）
 //	public static void set_vSyncCount(int value) { }
 
 //DO_APP_FUNC(0x047B21B0, float, Vector3_Distance, (app::Vector3 pos1, app::Vector3 pos2));

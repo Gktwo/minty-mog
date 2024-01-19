@@ -206,6 +206,7 @@
     <ClCompile Include="functions\about\About.cpp" />
     <ClCompile Include="Functions\visuals\HideUI.cpp" />
     <ClCompile Include="Functions\visuals\UnlockFPS.cpp" />
+    <ClCompile Include="Functions\World\battlematch.cpp" />
     <ClCompile Include="Functions\World\SetTimeScale.cpp" />
     <ClCompile Include="GUI\ResourceLoader.cpp" />
     <ClCompile Include="GUI\mutil.cpp" />
@@ -297,6 +298,7 @@
     <ClInclude Include="functions\about\About.h" />
     <ClInclude Include="Functions\visuals\HideUI.h" />
     <ClInclude Include="Functions\visuals\UnlockFPS.h" />
+    <ClInclude Include="Functions\World\battlematch.h" />
     <ClInclude Include="Functions\World\SetTimeScale.h" />
     <ClInclude Include="game\AdvancedFilter.h" />
     <ClInclude Include="GUI\ResourceLoader.h" />

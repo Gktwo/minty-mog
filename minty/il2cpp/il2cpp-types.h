@@ -2653,6 +2653,27 @@ struct __declspec(align(8)) BattleLogic_Skills_SkillPerformer_Fields {
     bool _isSpecial;
     struct System_Collections_Generic_IEnumerable_AffectSkillResultCommand__o* _previousAffectSkillResults;
 };
+struct Network_MatchId_Fields {
+    int32_t Id;
+};
+struct Network_MatchId_VTable {
+    VirtualInvokeData _0_Equals;
+    VirtualInvokeData _1_Finalize;
+    VirtualInvokeData _2_GetHashCode;
+    VirtualInvokeData _3_ToString;
+    VirtualInvokeData _4_Serialize;
+    VirtualInvokeData _5_Equals;
+};
+struct Network_MatchId_c {
+    Il2CppClass_1 _1;
+    void* static_fields;
+    Il2CppRGCTXData* rgctx_data;
+    Il2CppClass_2 _2;
+    Network_MatchId_VTable vtable;
+};
+struct Network_MatchId_o {
+    Network_MatchId_Fields fields;
+};
 struct BattleLogic_Skills_SkillPerformer_VTable {
     VirtualInvokeData _0_Equals;
     VirtualInvokeData _1_Finalize;
@@ -2977,5 +2998,142 @@ struct UnityEngine_EventSystems_EventSystem_o {
 struct UnityEngine_EventSystems_EventSystem_StaticFields {
     struct System_Collections_Generic_List_EventSystem__o* m_EventSystems;
     struct System_Comparison_RaycastResult__o* s_RaycastComparer;
+};
+
+struct __declspec(align(8)) BattleLogic_BattleMatch_Fields {
+    struct BattleLogic_BattleMatchSettings_o* _BattleMatchSettings_k__BackingField;
+    struct BattleLogic_BattleObjectContainer_o* _BattleObjectContainer_k__BackingField;
+    struct BattleLogic_Sequencer_o* _Sequencer_k__BackingField;
+    struct Network_MatchId_o _MatchId_k__BackingField;
+    struct BattleLogic_Referees_IBattleMatchReferee_o* _Referee_k__BackingField;
+    struct BattleLogic_BattleBehaviorManager_o* _BattleBehaviorManager_k__BackingField;
+    struct BattleLogic_AiLogicManager_o* _AiLogicManager_k__BackingField;
+    struct BattleLogic_BattleLocationManager_o* _BattleLocationManager_k__BackingField;
+    struct BattleLogic_BattleStrikeComboManager_o* _StrikeComboManager_k__BackingField;
+    bool _IsAnyonePlayingSpecialSkill_k__BackingField;
+    struct BattleLogic_MatchResult_o* _Result_k__BackingField;
+    bool _AnyPlayerReadied_k__BackingField;
+    bool _isLastMatch;
+    struct BattleLogic_ITimer_o* _timer;
+    struct Network_LogicTimeSpan_o _startedTimeSpan;
+    struct BattleLogic_BattleLogic_o* _logic;
+    struct BattleLogic_StatusEffectUpdater_o* _statusEffectUpdater;
+    struct BattleLogic_DependingStatusEffectRemover_o* _dependingStatusEffectRemover;
+    struct BattleLogic_HateRankNotifier_o* _hateRankNotifier;
+    struct BattleLogic_OnTimeSpecialPointCollector_o* _onTimeSpecialPointCollector;
+    struct BattleLogic_IReady_o* _onReady;
+};
+struct BattleLogic_BattleMatch_VTable {
+    VirtualInvokeData _0_Equals;
+    VirtualInvokeData _1_Finalize;
+    VirtualInvokeData _2_GetHashCode;
+    VirtualInvokeData _3_ToString;
+    VirtualInvokeData _4_get_BattleMatchSettings;
+    VirtualInvokeData _5_get_BattleObjectContainer;
+    VirtualInvokeData _6_get_Adapters;
+    VirtualInvokeData _7_get_Sequencer;
+    VirtualInvokeData _8_get_WaveIndex;
+    VirtualInvokeData _9_get_QuestCode;
+    VirtualInvokeData _10_get_MatchId;
+    VirtualInvokeData _11_get_Referee;
+    VirtualInvokeData _12_get_BattleBehaviorManager;
+    VirtualInvokeData _13_get_AiLogicManager;
+    VirtualInvokeData _14_get_BattleLocationManager;
+    VirtualInvokeData _15_get_StrikeComboManager;
+    VirtualInvokeData _16_get_IsAnyonePlayingSpecialSkill;
+    VirtualInvokeData _17_set_IsAnyonePlayingSpecialSkill;
+    VirtualInvokeData _18_get_Result;
+    VirtualInvokeData _19_get_ReadyToFinishMatch;
+    VirtualInvokeData _20_get_HasFinishingBlow;
+    VirtualInvokeData _21_get_CanUseSpecialSkillAnytime;
+    VirtualInvokeData _22_get_MatchTimeSpan;
+    VirtualInvokeData _23_InitializeSequencer;
+    VirtualInvokeData _24_Update;
+    VirtualInvokeData _25_JudgeBattleMatchFinished;
+    VirtualInvokeData _26_AffectSkillRecalculation;
+    VirtualInvokeData _27_JoinHumanControlObject;
+    VirtualInvokeData _28_JoinNonHumanControlObject;
+    VirtualInvokeData _29_AnalyseInitialTarget;
+    VirtualInvokeData _30_JoinEveryOne;
+    VirtualInvokeData _31_SendJoinObject;
+    VirtualInvokeData _32_LeaveSilently;
+    VirtualInvokeData _33_FindBattleObject;
+    VirtualInvokeData _34_unknown;
+    VirtualInvokeData _35_unknown;
+    VirtualInvokeData _36_ChangeAutoMode;
+    VirtualInvokeData _37_FindMainTargetObject;
+    VirtualInvokeData _38_OnRequestStartStrikeCombo;
+    VirtualInvokeData _39_OnPlayStrikeCombo;
+    VirtualInvokeData _40_OnEndedStrikeCombo;
+    VirtualInvokeData _41_SetBattleEnvironment;
+    VirtualInvokeData _42_RegisterNotifyBattleStartCommand;
+    VirtualInvokeData _43_unknown;
+    VirtualInvokeData _44_WipeEnemies;
+    VirtualInvokeData _45_unknown;
+    VirtualInvokeData _46_RegisteAndExecuteInput;
+    VirtualInvokeData _47_OnDisconnect;
+    VirtualInvokeData _48_OnReconnect;
+    VirtualInvokeData _49_unknown;
+    VirtualInvokeData _50_unknown;
+    VirtualInvokeData _51_OnExpireStatusEffects;
+    VirtualInvokeData _52_OnRemoveStatusEffectVoluntary;
+    VirtualInvokeData _53_OnNotifySkillPlaying;
+    VirtualInvokeData _54_OnAffectSkillResultReceive;
+    VirtualInvokeData _55_unknown;
+    VirtualInvokeData _56_unknown;
+    VirtualInvokeData _57_unknown;
+    VirtualInvokeData _58_DebugRequestFinishBattle;
+    VirtualInvokeData _59_DebugRequestNextWave;
+    VirtualInvokeData _60_get_Now;
+    VirtualInvokeData _61_get_IsPause;
+    VirtualInvokeData _62_get_IsPauseStartTickCount;
+    VirtualInvokeData _63_Pause;
+    VirtualInvokeData _64_OnApllicationPauseInBattleLogic;
+    VirtualInvokeData _65_Resume;
+    VirtualInvokeData _66_UpdateTimer;
+    VirtualInvokeData _67_get_TimeScale;
+    VirtualInvokeData _68_SetTimeScale;
+    VirtualInvokeData _69_OnBattleLogicReady;
+    VirtualInvokeData _70_SetMigrationCommand;
+    VirtualInvokeData _71_SetFinishBattle;
+    VirtualInvokeData _72_IsSkillPermit;
+    VirtualInvokeData _73_IsSpecialSkillPermit;
+    VirtualInvokeData _74_OnAnyPlayerReadied;
+    VirtualInvokeData _75_OnEndedSpecialSkill;
+    VirtualInvokeData _76_OnEndedSkill;
+    VirtualInvokeData _77_OnTrainingEventComplete;
+    VirtualInvokeData _78_ExecuteCommand;
+};
+struct BattleLogic_BattleMatch_c {
+    Il2CppClass_1 _1;
+    void* static_fields;
+    Il2CppRGCTXData* rgctx_data;
+    Il2CppClass_2 _2;
+    BattleLogic_BattleMatch_VTable vtable;
+};
+struct BattleLogic_BattleMatch_o {
+    BattleLogic_BattleMatch_c* klass;
+    void* monitor;
+    BattleLogic_BattleMatch_Fields fields;
+};
+struct BattleLogic_Skills_SkillPerformer_CalculatedParameters_Fields {
+    struct BattleLogic_Models_CalculatedParameterOnSkillUse_o* CasterParameter;
+    struct BattleLogic_Models_CalculatedParameterOnSkillUse_o* ReceiverParameter;
+};
+struct BattleLogic_Skills_SkillPerformer_CalculatedParameters_VTable {
+    VirtualInvokeData _0_Equals;
+    VirtualInvokeData _1_Finalize;
+    VirtualInvokeData _2_GetHashCode;
+    VirtualInvokeData _3_ToString;
+};
+struct BattleLogic_Skills_SkillPerformer_CalculatedParameters_c {
+    Il2CppClass_1 _1;
+    void* static_fields;
+    Il2CppRGCTXData* rgctx_data;
+    Il2CppClass_2 _2;
+    BattleLogic_Skills_SkillPerformer_CalculatedParameters_VTable vtable;
+};
+struct BattleLogic_Skills_SkillPerformer_CalculatedParameters_o {
+    BattleLogic_Skills_SkillPerformer_CalculatedParameters_Fields fields;
 };
 #endif // IL2CPP_TYPES_H

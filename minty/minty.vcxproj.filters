@@ -84,6 +84,7 @@
     <ClCompile Include="Functions\Debug\debug.cpp" />
     <ClCompile Include="Functions\visuals\HideUI.cpp" />
     <ClCompile Include="Functions\visuals\UnlockFPS.cpp" />
+    <ClCompile Include="Functions\World\battlematch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\MainGUI.h" />
@@ -211,6 +212,7 @@
     <ClInclude Include="Functions\Debug\debug.h" />
     <ClInclude Include="Functions\visuals\HideUI.h" />
     <ClInclude Include="Functions\visuals\UnlockFPS.h" />
+    <ClInclude Include="Functions\World\battlematch.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="il2cpp\detours.lib" />

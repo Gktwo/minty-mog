@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #define LOG(level, format, ...) Logger::log(level, format, __VA_ARGS__)
 #define LOG_DEBUG(format, ...) LOG(Logger::Level::Debug, format, __VA_ARGS__)

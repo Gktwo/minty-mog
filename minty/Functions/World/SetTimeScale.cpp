@@ -22,7 +22,7 @@ namespace cheat {
 
 	if (f_Enabled.getValue()) {
 	    ImGui::Indent();
-	    ConfigSliderFloat(_("speed value"), f_Speed, 1.0f, 20.0f, _("Change the value of game speed"));
+	    ConfigSliderFloat(_("speed value"), f_Speed, 0.1f, 20.0f, _("Change the value of game speed"));
 	    f_Hotkey.Draw();
 	    ImGui::Unindent();
 	}

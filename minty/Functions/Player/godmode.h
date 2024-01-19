@@ -9,6 +9,9 @@ namespace cheat {
 
 	Hotkey f_Hotkey;
 
+	ConfigField<bool> f_Multiplier;
+	ConfigField<float> f_Multipliervalue;
+
 	void GUI() override;
 	void Outer() override;
 	void Status() override;
