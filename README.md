@@ -3,7 +3,7 @@
 A Magic of the Eminence in Shadow: Master of Garden
 ## Functions
 - Godmode
-- Demagehack(x)
+- Demagehack
 - BattleSpeed
 - hideUI
 - UnlockFPS
