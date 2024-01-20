@@ -50,7 +50,7 @@ GameVersion getGameVersion() {
 
 	int version;
 	LOG_DEBUG("Please enter a number to select your game version");
-	LOG_DEBUG("\nTAIWAN : 1\n GLOBAL : 2 \n JAPAN : 3\n ");
+	LOG_DEBUG("\n TAIWAN : 1\n GLOBAL : 2 \n JAPAN : 3\n ");
 
 	std::cin >> version;
 	switch (version) {
