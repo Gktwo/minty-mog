@@ -1,22 +1,22 @@
 ﻿#include "util.h"
 
 namespace util {
-	std::string getUAHash(std::string execPath) {
-		auto path = std::filesystem::path(execPath).parent_path() / "pkg_version";
-		std::ifstream infile(path);
-		std::string line;
-		std::regex str_expr = std::regex("GameAssembly.dll.*\"([0-9a-f]{32})\"");
-		auto match = std::smatch();
+	//std::string getUAHash(std::string execPath) {
+	//	auto path = std::filesystem::path(execPath).parent_path() / "pkg_version";
+	//	std::ifstream infile(path);
+	//	std::string line;
+	//	std::regex str_expr = std::regex("GameAssembly.dll.*\"([0-9a-f]{32})\"");
+	//	auto match = std::smatch();
 
-		while (std::getline(infile, line)) {
-			std::regex_search(line, match, str_expr);
+	//	while (std::getline(infile, line)) {
+	//		std::regex_search(line, match, str_expr);
 
-			if (match.size() == 2) {
-				return match[1].str();
-				break;
-			}
-		}
-	}
+	//		if (match.size() == 2) {
+	//			return match[1].str();
+	//			break;
+	//		}
+	//	}
+	//}
 
 	std::vector<std::string> split(const std::string& content, const std::string& delimiter) {
 		std::vector<std::string> tokens;

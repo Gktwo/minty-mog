@@ -7,20 +7,20 @@ using namespace app;
 
 //globalupdate
 //UnityEngine.EventSystems.EventSystem$$Update
-DO_APP_FUNC(0x01851940, void, Global_Update, (app::UnityEngine_EventSystems_EventSystem_o* __this, app::MethodInfo* method));
+DO_APP_FUNC(0x01851940, 0x03256c90, 0x0, void, Global_Update, (app::UnityEngine_EventSystems_EventSystem_o* __this, app::MethodInfo* method));
 
 //BattleLogic.BattleMatch
-DO_APP_FUNC(0x03195700, void, BattleLogic_BattleMatch__Update, (app::BattleLogic_BattleMatch_o* __this));
-DO_APP_FUNC(0x03194cf0, float, BattleLogic_BattleMatch__get_TimeScale, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03195700, 0x019abf70, 0x0, void, BattleLogic_BattleMatch__Update, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03194cf0, 0x019ab4c0, 0x0, float, BattleLogic_BattleMatch__get_TimeScale, (app::BattleLogic_BattleMatch_o* __this));
 //DO_APP_FUNC(0x03198010, void, BattleLogic_BattleMatch__SetTimeScale, (app::BattleLogic_BattleMatch_o* __this, float a));
-DO_APP_FUNC(0x03194c50, bool, BattleLogic_BattleMatch__get_IsPause, (app::BattleLogic_BattleMatch_o* __this));
-DO_APP_FUNC(0x03197ef0, void, BattleLogic_BattleMatch__Pause,(app::BattleLogic_BattleMatch_o* __this));
-DO_APP_FUNC(0x03197fb0, void, BattleLogic_BattleMatch__Resume,(app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03194c50, 0x019ab4c0, 0x0, bool, BattleLogic_BattleMatch__get_IsPause, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03197ef0, 0x019ae760, 0x0, void, BattleLogic_BattleMatch__Pause, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03197fb0, 0x019ae820, 0x0, void, BattleLogic_BattleMatch__Resume, (app::BattleLogic_BattleMatch_o* __this));
 
 
 
-DO_APP_FUNC(0x00adb940, app::Network_MatchId_o, BattleLogic_BattleMatch__get_MatchId, (app::BattleLogic_BattleMatch_o* __this));
-DO_APP_FUNC(0x03196e50, void*, BattleLogic_BattleMatch__WipeEnemies, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x00adb940, 0x00d0eca0, 0x0, app::Network_MatchId_o, BattleLogic_BattleMatch__get_MatchId, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03196e50, 0x0, 0x0, void*, BattleLogic_BattleMatch__WipeEnemies, (app::BattleLogic_BattleMatch_o* __this));
 
 
 
@@ -31,32 +31,32 @@ DO_APP_FUNC(0x03196e50, void*, BattleLogic_BattleMatch__WipeEnemies, (app::Battl
 //skillshack
 //DO_APP_FUNC(0x02ff39c0, bool, BattleLogic_Skills_SkillAffectable__IsNotBlocked, (app::Network_Utility_SkillUsingStatus_o* a));
 //DO_APP_FUNC(0x00b3f270, void, CaravanWa_Shared_MasterTable_SkillPowerMaster__set_Power, (app::Network_Utility_SkillUsingStatus_o* a));
-DO_APP_FUNC(0x00d07bf0, app::String*, CaravanWa_Shared_MasterTable_SkillPowerMaster__GetPowerDisplayString, (app::CaravanWa_Shared_MasterTable_SkillPowerMaster_o* __this));
+DO_APP_FUNC(0x00d07bf0, 0x0, 0x0, app::String*, CaravanWa_Shared_MasterTable_SkillPowerMaster__GetPowerDisplayString, (app::CaravanWa_Shared_MasterTable_SkillPowerMaster_o* __this));
 //DO_APP_FUNC(0x028078c0, bool, BattleObjectModel__CanUseSpecialSkill, (app::BattleObjectModel_o* __this));
-DO_APP_FUNC(0x03194f80, bool, BattleLogic_BattleMatch__get_CanUseSpecialSkillAnytime, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03194f80, 0x0, 0x0, bool, BattleLogic_BattleMatch__get_CanUseSpecialSkillAnytime, (app::BattleLogic_BattleMatch_o* __this));
 
 
 
 
 //BattleLogic
-DO_APP_FUNC(0x03192400, void, BattleLogic_BattleLogic__Update, (app::BattleLogic_BattleLogic_o* __this));
-DO_APP_FUNC(0x03191ca0, void, BattleLogic_BattleLogic__set_DebugUnlockRankSkills, (bool a));
-DO_APP_FUNC(0x019dba20, void, BattleLogic_BattleLogic__set_IgnoreDamage, (app::BattleLogic_BattleLogic_o* __this, bool a));
+DO_APP_FUNC(0x03192400, 0x0, 0x0, void, BattleLogic_BattleLogic__Update, (app::BattleLogic_BattleLogic_o* __this));
+DO_APP_FUNC(0x03191ca0, 0x0, 0x0, void, BattleLogic_BattleLogic__set_DebugUnlockRankSkills, (bool a));
+DO_APP_FUNC(0x019dba20, 0x0, 0x0, void, BattleLogic_BattleLogic__set_IgnoreDamage, (app::BattleLogic_BattleLogic_o* __this, bool a));
 
 
 
 
 //godmode
-DO_APP_FUNC(0x030580a0, void, BattleLogic_Skills_SkillPerformer__RecordMiss, (app::BattleLogic_Skills_SkillPerformer_o* __this, app::Network_SkillActionType_o a, app::BattleLogic_Models_BattleObject_o* b, app::BattleLogic_Models_BattleObject_o* c, bool d));
-DO_APP_FUNC(0x03057270, void, BattleLogic_Skills_SkillPerformer__RecordDamage, (app::BattleLogic_Skills_SkillPerformer_o* __this, float a, app::Network_SkillActionType_o b, bool c, app::BattleLogic_Skills_SkillPerformer_CalculatedParameters_o d, app::BattleLogic_Models_BattleObject_o* e, app::BattleLogic_Models_BattleObject_o* f, app::Network_Utility_SkillUsingStatus_o* g, bool h, float i));
+DO_APP_FUNC(0x030580a0, 0x0171a030, 0x0, void, BattleLogic_Skills_SkillPerformer__RecordMiss, (app::BattleLogic_Skills_SkillPerformer_o* __this, app::Network_SkillActionType_o a, app::BattleLogic_Models_BattleObject_o* b, app::BattleLogic_Models_BattleObject_o* c, bool d));
+DO_APP_FUNC(0x03057270, 0x01719210, 0x0, void, BattleLogic_Skills_SkillPerformer__RecordDamage, (app::BattleLogic_Skills_SkillPerformer_o* __this, float a, app::Network_SkillActionType_o b, bool c, app::BattleLogic_Skills_SkillPerformer_CalculatedParameters_o d, app::BattleLogic_Models_BattleObject_o* e, app::BattleLogic_Models_BattleObject_o* f, app::Network_Utility_SkillUsingStatus_o* g, bool h, float i));
 
 
 //BattleObject analyzer
 
-DO_APP_FUNC(0x0319aa90, bool, BattleLogic_Models_BattleObject__get_IsBoss,(app::BattleLogic_Models_BattleObject_o* __this));
-DO_APP_FUNC(0x0319a9c0, app::BattleTeams__Enum, BattleLogic_Models_BattleObject__get_Team,(app::BattleLogic_Models_BattleObject_o* __this));
+DO_APP_FUNC(0x0319aa90, 0x019b1350, 0x0, bool, BattleLogic_Models_BattleObject__get_IsBoss, (app::BattleLogic_Models_BattleObject_o* __this));
+DO_APP_FUNC(0x0319a9c0, 0x019b1240, 0x0, app::BattleTeams__Enum, BattleLogic_Models_BattleObject__get_Team, (app::BattleLogic_Models_BattleObject_o* __this));
 //Alpha,//Bravo
-DO_APP_FUNC(0x0319bd00, void*, BattleLogic_Models_BattleObject__Die, (app::BattleLogic_Models_BattleObject_o* __this, bool a));
+DO_APP_FUNC(0x0319bd00, 0x019b25f0, 0x0, void*, BattleLogic_Models_BattleObject__Die, (app::BattleLogic_Models_BattleObject_o* __this, bool a));
 
 
 
@@ -84,7 +84,7 @@ DO_APP_FUNC(0x0319bd00, void*, BattleLogic_Models_BattleObject__Die, (app::Battl
 //DO_APP_FUNC(0x07E0AC50, app::SafeFloat, MoleMole_SafeFloat_set_Value, (float value));
 
 //System.Runtime.InteropServices.Marshal$$PtrToStringAnsi
-DO_APP_FUNC(0x01dec080, app::String*, Marshal_PtrToStringAnsi, (void* ptr));
+DO_APP_FUNC(0x01dec080, 0x03a67b80, 0x0, app::String*, Marshal_PtrToStringAnsi, (void* ptr));
 
 
 //UnityEngine.UI.ScrollRect$$GetBounds
@@ -94,13 +94,13 @@ DO_APP_FUNC(0x01dec080, app::String*, Marshal_PtrToStringAnsi, (void* ptr));
 
 //public sealed class GameObject :
 //UnityEngine.GameObject$$CreatePrimitive
-DO_APP_FUNC(0x03beafb0,app::GameObject*, GameObject_CreatePrimitive, (app::PrimitiveType__Enum type));
+DO_APP_FUNC(0x03beafb0, 0x02ceb1e0, 0x0, app::GameObject*, GameObject_CreatePrimitive, (app::PrimitiveType__Enum type));
 //UnityEngine.GameObject$$get_active
-DO_APP_FUNC(0x03bebc30,bool, GameObject_get_active, (app::GameObject* __this));
+DO_APP_FUNC(0x03bebc30, 0x02cebe60, 0x0, bool, GameObject_get_active, (app::GameObject* __this));
 //UnityEngine.GameObject$$SetActive
-DO_APP_FUNC(0x03bebce0,void, GameObject_SetActive, (app::GameObject* __this, bool value));
+DO_APP_FUNC(0x03bebce0, 0x02cebf10, 0x0, void, GameObject_SetActive, (app::GameObject* __this, bool value));
 //UnityEngine.GameObject$$Find
-DO_APP_FUNC(0x03bec5b0,app::GameObject*, GameObject_Find, (app::String* name));
+DO_APP_FUNC(0x03bec5b0, 0x02cec7e0, 0x0, app::GameObject*, GameObject_Find, (app::String* name));
 
 //DO_APP_FUNC(0x03B9C710,app::Component*, GameObject_GetComponentByName, (app::GameObject* __this, app::String* className));
 ////internal Component GetComponentByName(string type) { }
@@ -141,18 +141,18 @@ DO_APP_FUNC(0x03bec5b0,app::GameObject*, GameObject_Find, (app::String* name));
 //public static void set_fog(bool value) { }
 
 //public class Time
-DO_APP_FUNC(0x011e3990, float, Time_get_deltaTime, ());
+DO_APP_FUNC(0x011e3990, 0x025cee40, 0x0, float, Time_get_deltaTime, ());
 //public static float get_deltaTime() { }
-DO_APP_FUNC(0x023c40b0, float, Time_get_timeScale, ());
+DO_APP_FUNC(0x023c40b0, 0x043c63a0, 0x0, float, Time_get_timeScale, ());
 //public static float get_timeScale() { }
-DO_APP_FUNC(0x0478cfc0, void*, Time_set_timeScale, (float time));
+DO_APP_FUNC(0x0478cfc0, 0x043c63f0, 0x0, void*, Time_set_timeScale, (float time));
 
 
-DO_APP_FUNC(0x03bcfcf0, bool*, Application_get_isFocused, ());
+DO_APP_FUNC(0x03bcfcf0, 0x02ccfea0, 0x0, bool*, Application_get_isFocused, ());
 //public static bool get_isFocused() { }
-DO_APP_FUNC(0x03bd01f0, void*, Application_set_targetFrameRate, (int32_t value));
+DO_APP_FUNC(0x03bd01f0, 0x02cd0440, 0x0, void*, Application_set_targetFrameRate, (int32_t value));
 //	public static void set_targetFrameRate(int value) { }
-DO_APP_FUNC(0x03adc140, void*, QualitySettings_set_vSyncCount, (int32_t value));//帧率限制倍数（垂直同步）
+DO_APP_FUNC(0x03adc140, 0x02bf0b90, 0x0, void*, QualitySettings_set_vSyncCount, (int32_t value));//帧率限制倍数（垂直同步）
 //	public static void set_vSyncCount(int value) { }
 
 //DO_APP_FUNC(0x047B21B0, float, Vector3_Distance, (app::Vector3 pos1, app::Vector3 pos2));
@@ -161,19 +161,19 @@ DO_APP_FUNC(0x03adc140, void*, QualitySettings_set_vSyncCount, (int32_t value));
 ////	public static Vector3 Lerp(Vector3 a, Vector3 b, float t) { }
 
 //public class Cursor
-DO_APP_FUNC(0x03be7dd0, void, Cursor_set_visible, (bool value));
+DO_APP_FUNC(0x03be7dd0, 0x02ce8010, 0x0, void, Cursor_set_visible, (bool value));
 //public static void set_visible(bool value) { }
-DO_APP_FUNC(0x03be7e20, void, Cursor_get_lockState, ());
+DO_APP_FUNC(0x03be7e20, 0x02ce8060, 0x0, void, Cursor_get_lockState, ());
 //public static CursorLockMode get_lockState() { }
-DO_APP_FUNC(0x03be7e70, void, Cursor_set_lockState, (app::CursorLockMode__Enum value));
+DO_APP_FUNC(0x03be7e70, 0x02ce80b0, 0x0, void, Cursor_set_lockState, (app::CursorLockMode__Enum value));
 //public static void set_lockState(CursorLockMode value) { }
 
 //public sealed class Screen
-DO_APP_FUNC(0x03aed440, int32_t, Screen_get_width, (app::MethodInfo* method));
+DO_APP_FUNC(0x03aed440, 0x02c01e90, 0x0, int32_t, Screen_get_width, (app::MethodInfo* method));
 //	 public static int get_width() { }
-DO_APP_FUNC(0x03aed490, int32_t, Screen_get_height, (app::MethodInfo* method));
+DO_APP_FUNC(0x03aed490, 0x02c01ee0, 0x0, int32_t, Screen_get_height, (app::MethodInfo* method));
 //public static int get_height() { }
-DO_APP_FUNC(0x03aed7f0, void, Screen_SetResolution, (int width, int height, bool fullscreen));
+DO_APP_FUNC(0x03aed7f0, 0x02c02240, 0x0, void, Screen_SetResolution, (int width, int height, bool fullscreen));
 
 
 

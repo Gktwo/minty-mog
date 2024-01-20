@@ -213,6 +213,7 @@
     <ClInclude Include="Functions\World\SetTimeScale.h" />
     <ClInclude Include="Functions\Debug\debug.h" />
     <ClInclude Include="Functions\Player\skillshack.h" />
+
   </ItemGroup>
   <ItemGroup>
     <Library Include="api\lua\lua53.lib" />
