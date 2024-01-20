@@ -5,12 +5,14 @@
 namespace cheat {
     class Debug : public Function {
     public:
-	ConfigField<bool> f_Enabled;
-	ConfigField<bool> f_WipeEnemies;
-	ConfigField<bool> f_time;
+	//ConfigField<bool> f_Enabled;
+	//ConfigField<bool> f_WipeEnemies;
+	//ConfigField<bool> f_time;
 
 	Hotkey f_Hotkey;
 	Hotkey f_Wipe;
+	Hotkey f_Pause;
+	Hotkey f_Resume;
 
 	Hotkey f_Resolution;
 	ConfigField<int> f_Resolutionwidth;
@@ -22,6 +24,8 @@ namespace cheat {
 	void Status() override;
 
 	void SetResolution();
+	void Pause();
+	void Resume();
 
 	std::string getModule() override;
 

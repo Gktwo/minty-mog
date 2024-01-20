@@ -161,6 +161,7 @@
     <ClCompile Include="Functions\Debug\debug.cpp" />
     <ClCompile Include="Functions\Player\demagehack.cpp" />
     <ClCompile Include="Functions\Player\godmode.cpp" />
+    <ClCompile Include="Functions\Player\skillshack.cpp" />
     <ClCompile Include="functions\settings\Settings.cpp" />
     <ClCompile Include="api\discord\src\connection_win.cpp" />
     <ClCompile Include="api\discord\src\discord_register_win.cpp" />
@@ -194,6 +195,7 @@
     <ClInclude Include="functions\FunctionIncludes.h" />
     <ClInclude Include="Functions\Player\demagehack.h" />
     <ClInclude Include="Functions\Player\godmode.h" />
+    <ClInclude Include="Functions\Player\skillshack.h" />
     <ClInclude Include="functions\settings\Settings.h" />
     <ClCompile Include="config\ConfigManager.cpp">
       <FileType>CppHeader</FileType>

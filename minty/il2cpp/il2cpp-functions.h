@@ -14,6 +14,9 @@ DO_APP_FUNC(0x03195700, void, BattleLogic_BattleMatch__Update, (app::BattleLogic
 DO_APP_FUNC(0x03194cf0, float, BattleLogic_BattleMatch__get_TimeScale, (app::BattleLogic_BattleMatch_o* __this));
 //DO_APP_FUNC(0x03198010, void, BattleLogic_BattleMatch__SetTimeScale, (app::BattleLogic_BattleMatch_o* __this, float a));
 DO_APP_FUNC(0x03194c50, bool, BattleLogic_BattleMatch__get_IsPause, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03197ef0, void, BattleLogic_BattleMatch__Pause,(app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03197fb0, void, BattleLogic_BattleMatch__Resume,(app::BattleLogic_BattleMatch_o* __this));
+
 
 
 DO_APP_FUNC(0x00adb940, app::Network_MatchId_o, BattleLogic_BattleMatch__get_MatchId, (app::BattleLogic_BattleMatch_o* __this));
@@ -23,13 +26,16 @@ DO_APP_FUNC(0x03196e50, void*, BattleLogic_BattleMatch__WipeEnemies, (app::Battl
 
 
 //demage hack
-//DO_APP_FUNC(0x02ff5970, int32_t,BattleLogic_Skills_SkillHitCounter__GetHitCount, (app::BattleLogic_Skills_SkillHitCounter_o* __this, app::Network_BattleObjectId_o a));
 
 
 //skillshack
 //DO_APP_FUNC(0x02ff39c0, bool, BattleLogic_Skills_SkillAffectable__IsNotBlocked, (app::Network_Utility_SkillUsingStatus_o* a));
 //DO_APP_FUNC(0x00b3f270, void, CaravanWa_Shared_MasterTable_SkillPowerMaster__set_Power, (app::Network_Utility_SkillUsingStatus_o* a));
 DO_APP_FUNC(0x00d07bf0, app::String*, CaravanWa_Shared_MasterTable_SkillPowerMaster__GetPowerDisplayString, (app::CaravanWa_Shared_MasterTable_SkillPowerMaster_o* __this));
+//DO_APP_FUNC(0x028078c0, bool, BattleObjectModel__CanUseSpecialSkill, (app::BattleObjectModel_o* __this));
+DO_APP_FUNC(0x03194f80, bool, BattleLogic_BattleMatch__get_CanUseSpecialSkillAnytime, (app::BattleLogic_BattleMatch_o* __this));
+
+
 
 
 //BattleLogic
@@ -37,8 +43,7 @@ DO_APP_FUNC(0x03192400, void, BattleLogic_BattleLogic__Update, (app::BattleLogic
 DO_APP_FUNC(0x03191ca0, void, BattleLogic_BattleLogic__set_DebugUnlockRankSkills, (bool a));
 DO_APP_FUNC(0x019dba20, void, BattleLogic_BattleLogic__set_IgnoreDamage, (app::BattleLogic_BattleLogic_o* __this, bool a));
 
-//DO_APP_FUNC(0x03194300, void, BattleLogic_BattleLogicSimulateTimer__UpdateTimer, (app::BattleLogic_BattleLogicSimulateTimer_o* __this));
-//DO_APP_FUNC(0x03194390, void*, BattleLogic_BattleLogicSimulateTimer__SetTimeScale, (app::BattleLogic_BattleLogicSimulateTimer_o* __this, float a));
+
 
 
 //godmode

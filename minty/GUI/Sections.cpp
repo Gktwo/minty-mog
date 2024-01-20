@@ -3,6 +3,7 @@
 
 #include "../functions/player/godmode.h"
 #include "../functions/player/demagehack.h"
+#include "../functions/player/skillshack.h"
 #include "../functions/world/SetTimeScale.h"
 #include "../functions/world/BattleMatch.h"
 
@@ -29,6 +30,7 @@ void Init() {
 
     INIT_FUNC(GodMode);
     INIT_FUNC(DemageHack);
+    //INIT_FUNC(SkillsHack);
     INIT_FUNC(SetTimeScale);
     INIT_FUNC(BattleMatch);
 
