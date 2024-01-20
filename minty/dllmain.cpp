@@ -31,9 +31,9 @@ DWORD WINAPI MainThread(LPVOID lpReserved) {
     int initDelay = settings.f_InitDelay.getValue();
 
     if (settings.f_ShowRpc.getValue()) {
-        g_Discord->Initialize();
-        g_Discord->Update();
-        LOG_INFO("Showing RPC...");
+        //g_Discord->Initialize();
+        //g_Discord->Update();
+        //LOG_INFO("Showing RPC...");
     }
 
     LOG_INFO("Waiting %i seconds before starting DirectX...", initDelay / 1000);

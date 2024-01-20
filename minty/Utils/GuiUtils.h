@@ -50,6 +50,19 @@ bool ConfigInputText(const char* name, ConfigField<T>& field, const char* descri
 }
 
 template <typename T>
+bool ConfigInputInt(const char* name, ConfigField<T>& field, const char* description = nullptr) {
+    T& value = field.getValue();
+
+    if (ImGui::InputInt(name, &value)) {
+        field.setValue(value);
+        config::setValue(field, value);
+        return true;
+    }
+    END_WIDGET();
+    return false;
+}
+
+template <typename T>
 bool ConfigSliderInt(const char* name, ConfigField<T>& field, const int min, const int max, const char* description = nullptr) {
     T& value = field.getValue();
 

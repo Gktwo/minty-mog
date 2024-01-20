@@ -12,9 +12,16 @@ namespace cheat {
 	Hotkey f_Hotkey;
 	Hotkey f_Wipe;
 
+	Hotkey f_Resolution;
+	ConfigField<int> f_Resolutionwidth;
+	ConfigField<int> f_Resolutionheight;
+	ConfigField<bool> f_Resolutionfullscreen;
+
 	void GUI() override;
 	void Outer() override;
 	void Status() override;
+
+	void SetResolution();
 
 	std::string getModule() override;
 

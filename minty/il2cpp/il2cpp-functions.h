@@ -49,7 +49,7 @@ DO_APP_FUNC(0x03057270, void, BattleLogic_Skills_SkillPerformer__RecordDamage, (
 //BattleObject analyzer
 
 DO_APP_FUNC(0x0319aa90, bool, BattleLogic_Models_BattleObject__get_IsBoss,(app::BattleLogic_Models_BattleObject_o* __this));
-DO_APP_FUNC(0x0319a9c0, int32_t, BattleLogic_Models_BattleObject__get_Team,(app::BattleLogic_Models_BattleObject_o* __this));
+DO_APP_FUNC(0x0319a9c0, app::BattleTeams__Enum, BattleLogic_Models_BattleObject__get_Team,(app::BattleLogic_Models_BattleObject_o* __this));
 //Alpha,//Bravo
 DO_APP_FUNC(0x0319bd00, void*, BattleLogic_Models_BattleObject__Die, (app::BattleLogic_Models_BattleObject_o* __this, bool a));
 
@@ -136,9 +136,9 @@ DO_APP_FUNC(0x03bec5b0,app::GameObject*, GameObject_Find, (app::String* name));
 //public static void set_fog(bool value) { }
 
 //public class Time
-DO_APP_FUNC(0x011e3990, float, Time_get_deltaTime, (app::MethodInfo* method));
+DO_APP_FUNC(0x011e3990, float, Time_get_deltaTime, ());
 //public static float get_deltaTime() { }
-DO_APP_FUNC(0x023c40b0, float, Time_get_timeScale, (app::MethodInfo* method));
+DO_APP_FUNC(0x023c40b0, float, Time_get_timeScale, ());
 //public static float get_timeScale() { }
 DO_APP_FUNC(0x0478cfc0, void*, Time_set_timeScale, (float time));
 
@@ -158,7 +158,7 @@ DO_APP_FUNC(0x03adc140, void*, QualitySettings_set_vSyncCount, (int32_t value));
 //public class Cursor
 DO_APP_FUNC(0x03be7dd0, void, Cursor_set_visible, (bool value));
 //public static void set_visible(bool value) { }
-DO_APP_FUNC(0x03be7e20, void, Cursor_get_lockState, (app::MethodInfo* method));
+DO_APP_FUNC(0x03be7e20, void, Cursor_get_lockState, ());
 //public static CursorLockMode get_lockState() { }
 DO_APP_FUNC(0x03be7e70, void, Cursor_set_lockState, (app::CursorLockMode__Enum value));
 //public static void set_lockState(CursorLockMode value) { }
@@ -168,7 +168,7 @@ DO_APP_FUNC(0x03aed440, int32_t, Screen_get_width, (app::MethodInfo* method));
 //	 public static int get_width() { }
 DO_APP_FUNC(0x03aed490, int32_t, Screen_get_height, (app::MethodInfo* method));
 //public static int get_height() { }
-
+DO_APP_FUNC(0x03aed7f0, void, Screen_SetResolution, (int width, int height, bool fullscreen));
 
 
 

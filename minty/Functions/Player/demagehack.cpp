@@ -55,7 +55,7 @@ namespace cheat {
 	auto& DemageHack = DemageHack::getInstance();
 
 
-	if (DemageHack.f_Enabled.getValue() && app::BattleLogic_Models_BattleObject__get_Team(e) == 0 && app::BattleLogic_Models_BattleObject__get_Team(f) == 1)
+	if (DemageHack.f_Enabled.getValue() && app::BattleLogic_Models_BattleObject__get_Team(e) == app::BattleTeams__Enum::Alpha && app::BattleLogic_Models_BattleObject__get_Team(f) == app::BattleTeams__Enum::Bravo)
 	    if (DemageHack.f_Multiplier.getValue())
 	    {
 		a = a * DemageHack.f_Multipliervalue.getValue();

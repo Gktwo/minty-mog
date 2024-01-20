@@ -146,3 +146,21 @@ enum class ElementType__Enum : int32_t {
     All,
 
 };
+enum class BattleTeams__Enum : int32_t {
+
+Alpha,
+Bravo,
+
+};
+enum class BattleObjectTypes__Enum : int32_t {
+
+    None,
+    HumanUnit,
+    Buddy,
+    PveMonster,
+    PvpMonster,
+    BattleNpc
+
+};
+
+        

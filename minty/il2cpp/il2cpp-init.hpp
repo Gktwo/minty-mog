@@ -35,6 +35,7 @@ namespace app {
 
 //enum class GameVersion {
 //	NONE,
+// GLOBAL
 //	CHINA
 //};
 

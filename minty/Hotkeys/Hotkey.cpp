@@ -77,6 +77,12 @@ void Hotkey::Draw(const char* label) {
 void Hotkey::Rebind() {
 	lastInputTime = std::chrono::steady_clock::now();
 
-	if (this->waitInput && KeyBind::SetToPressedKey(this->path, this->name, &this->key))
+	//Check if the delete key has been pressed
+	if (ImGui::IsKeyPressed(ImGui::GetKeyIndex(ImGuiKey_Delete))) {
+		this->key = -1;  
 		this->waitInput = false;
+	}
+	else if (this->waitInput && KeyBind::SetToPressedKey(this->path, this->name, &this->key)) {
+		this->waitInput = false;
+	}
 }

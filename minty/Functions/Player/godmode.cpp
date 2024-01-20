@@ -52,7 +52,7 @@ namespace cheat {
 	auto& GodMode = GodMode::getInstance();
 
 
-	if (GodMode.f_Enabled.getValue()&& app::BattleLogic_Models_BattleObject__get_Team(e) == 1 && app::BattleLogic_Models_BattleObject__get_Team(f) == 0)
+	if (GodMode.f_Enabled.getValue()&& app::BattleLogic_Models_BattleObject__get_Team(e) == app::BattleTeams__Enum::Bravo && app::BattleLogic_Models_BattleObject__get_Team(f) == app::BattleTeams__Enum::Alpha)
 	    if (GodMode.f_Multiplier.getValue())
 	    {
 		a = a / GodMode.f_Multipliervalue.getValue();
