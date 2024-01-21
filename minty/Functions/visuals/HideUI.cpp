@@ -21,10 +21,11 @@ namespace cheat {
 	void HideUI::GUI() {
 		ImGui::SeparatorText(_("HideUI"));
 		ConfigCheckbox(_("Hide UI"), f_Enabled, _("Hide in-game UI."));
+		ImGui::SameLine();
+		f_Hotkey.Draw();
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			f_Hotkey.Draw();
 			ConfigCheckbox(_("GlobalMenu"), f_ui_1, _("Hide in-game UI."));
 			ConfigCheckbox(_("GlobalHeader"), f_ui_2, _("Hide in-game UI."));
 			ConfigCheckbox(_("HomeWindow"), f_ui_3, _("Hide in-game UI."));
@@ -53,64 +54,35 @@ namespace cheat {
 	//GlobalMenu(Clone)
 	//GlobalHeader(Clone)
 	//HomeWindow(Clone)
+	void HideeUI(app::GameObject*& ui, const std::string& name, bool isEnabled, bool isUIValue) {
+		if (isEnabled && isUIValue) {
+			if (ui == nullptr) {
+				ui = app::GameObject_Find(string_to_il2cppi(name));
+				if (ui == nullptr) {
+					// Handle the case where the game object does not exist.
+					// For example, you might want to log an error message.
+					return;
+				}
+			}
+
+			if (ui->fields._.m_CachedPtr != nullptr)
+				app::GameObject_SetActive(ui, false);
+		}
+		else {
+			if (ui != nullptr && ui->fields._.m_CachedPtr != nullptr) {
+				app::GameObject_SetActive(ui, true);
+				ui = nullptr;
+			}
+		}
+	}
 
 	void Global_Update2_Hook(app::UnityEngine_EventSystems_EventSystem_o* __this, app::MethodInfo* method) {
 		auto& hideUI = HideUI::getInstance();
 
-		if (hideUI.f_Enabled.getValue() && hideUI.f_ui_1.getValue()) {
-			if (ui_1 == nullptr)
-				ui_1 = app::GameObject_Find(string_to_il2cppi("/GlobalMenu(Clone)"));
+		HideeUI(ui_1, "/GlobalMenu(Clone)", hideUI.f_Enabled.getValue(), hideUI.f_ui_1.getValue());
+		HideeUI(ui_2, "/GlobalHeader(Clone)", hideUI.f_Enabled.getValue(), hideUI.f_ui_2.getValue());
+		HideeUI(ui_3, "/HomeWindow(Clone)", hideUI.f_Enabled.getValue(), hideUI.f_ui_3.getValue());
 
-
-			if (ui_1->fields._.m_CachedPtr != nullptr)
-				app::GameObject_SetActive(ui_1, false);
-
-		}
-		else {
-			if (ui_1 != nullptr) {
-				if (ui_1->fields._.m_CachedPtr != nullptr) {
-					app::GameObject_SetActive(ui_1, true);
-
-					ui_1 = nullptr;
-				}
-			}
-		}
-
-		if (hideUI.f_Enabled.getValue() && hideUI.f_ui_2.getValue()) {
-			if (ui_2 == nullptr)
-				ui_2 = app::GameObject_Find(string_to_il2cppi("/GlobalHeader(Clone)"));
-
-			if (ui_2->fields._.m_CachedPtr != nullptr)
-				app::GameObject_SetActive(ui_2, false);
-
-		}
-		else {
-			if (ui_2 != nullptr) {
-				if (ui_2->fields._.m_CachedPtr != nullptr) {
-					app::GameObject_SetActive(ui_2, true);
-
-					ui_2 = nullptr;
-				}
-			}
-		}
-
-		if (hideUI.f_Enabled.getValue() && hideUI.f_ui_3.getValue()) {
-			if (ui_3 == nullptr)
-				ui_3 = app::GameObject_Find(string_to_il2cppi("/HomeWindow(Clone)"));
-
-			if (ui_3->fields._.m_CachedPtr != nullptr)
-				app::GameObject_SetActive(ui_3, false);
-
-		}
-		else {
-			if (ui_3 != nullptr) {
-				if (ui_3->fields._.m_CachedPtr != nullptr) {
-					app::GameObject_SetActive(ui_3, true);
-
-					ui_3 = nullptr;
-				}
-			}
-		}
 
 		CALL_ORIGIN(Global_Update2_Hook, __this, method);
 	}

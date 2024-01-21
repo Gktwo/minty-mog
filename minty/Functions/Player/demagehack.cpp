@@ -22,19 +22,20 @@ namespace cheat {
 	void DemageHack::GUI() {
 		ImGui::SeparatorText(_("DemageHack"));
 		ConfigCheckbox(_("DemageHack"), f_Enabled, _("DemageHack ."));
+		ImGui::SameLine();
+		f_Hotkey.Draw();
 
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
-			ConfigCheckbox(_("Multiplier Mode"), f_Multiplier, _("DemageHack ."));
-			f_Hotkey.Draw();
-			ImGui::Unindent();
-		}
+			ConfigCheckbox("Multiplier ", f_Multiplier, "Multiplier Mode");
+			if (f_Multiplier.getValue()) {
+				ConfigSliderFloat("DH Multiplier value", f_Multipliervalue, 1.0f, 100.0f, "Change the value of damage ");
+				ImGui::Unindent();
+			}
 
-		if (f_Multiplier.getValue()) {
-			ImGui::Indent();
-			ConfigSliderFloat(_("Multiplier value"), f_Multipliervalue, 1.0f, 100.0f, _("Change the value of damage "));
-			ImGui::Unindent();
+
+
 		}
 	}
 
@@ -47,18 +48,17 @@ namespace cheat {
 		if (f_Enabled.getValue())
 		{
 			std::string status = "DemageHack";
-			if (f_Multiplier.getValue()) 
-				status += " | Multiplier | %f", f_Multipliervalue.getValue();
+			if (f_Multiplier.getValue())
+			{
+				std::string multiplierValueStr = std::to_string(f_Multipliervalue.getValue());
+				status += (" | Multiplier | " + multiplierValueStr);
+			}
 			else
-				status += " | Multiplier | %f", 9999.0;
-			
+				status += " | 9999.0";
+			ImGui::Text("%s", status.c_str());
 		}
 
 
-
-
-
-			ImGui::Text(_("DemageHack | %f"), f_Multipliervalue.getValue());
 	}
 
 	std::string DemageHack::getModule() {
@@ -71,20 +71,10 @@ namespace cheat {
 
 		if (DemageHack.f_Enabled.getValue() && app::BattleLogic_Models_BattleObject__get_Team(e) == app::BattleTeams__Enum::Alpha && app::BattleLogic_Models_BattleObject__get_Team(f) == app::BattleTeams__Enum::Bravo)
 			if (DemageHack.f_Multiplier.getValue())
-			{
-
-			//	float demage = a;
 				a = a * DemageHack.f_Multipliervalue.getValue();
-			//	LOG_DEBUG("DemageHack: float a = %f >> %f", demage, a);
-			}
 			else
-			{
-
-			//	float demage = a;
 				a = a * 9999.0;
-				//LOG_DEBUG("DemageHack: float a = %f >> %f", demage, a);
 
-			}
 
 
 

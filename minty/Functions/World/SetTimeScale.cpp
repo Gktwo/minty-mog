@@ -19,12 +19,12 @@ namespace cheat {
 	void SetTimeScale::GUI() {
 		ImGui::SeparatorText(_("Game Speed"));
 		ConfigCheckbox(_("Game Speed"), f_Enabled, _("Change game speed ."));
-
+		ImGui::SameLine();
+		f_Hotkey.Draw();
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
 			ConfigSliderFloat(_("speed value"), f_Speed, 0.1f, 20.0f, _("Change the value of game speed"));
-			f_Hotkey.Draw();
 			ImGui::Unindent();
 		}
 	}

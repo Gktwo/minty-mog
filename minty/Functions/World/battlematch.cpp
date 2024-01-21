@@ -19,12 +19,12 @@ namespace cheat {
 	void BattleMatch::GUI() {
 		ImGui::SeparatorText(_("BattleMatch"));
 		ConfigCheckbox(_("BattleMatchSpeed"), f_Speed, _("Change BattleMatch speed ."));
-
+		ImGui::SameLine();
+		f_Hotkey.Draw();
 
 		if (f_Speed.getValue()) {
 			ImGui::Indent();
 			ConfigSliderFloat(_("speed value"), f_Speedvalue, 0.1f, 20.0f, _("Change the value of BattleMatch Speed"));
-			f_Hotkey.Draw();
 			ImGui::Unindent();
 		}
 	}

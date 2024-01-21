@@ -9,7 +9,7 @@ namespace cheat {
 		f_Enabled = config::getValue("functions:GodMode", "enabled", false);
 		f_Hotkey = Hotkey("functions:GodMode");
 
-		HookManager::install(app::BattleLogic_Skills_SkillPerformer__RecordDamage, BattleLogic_Skills_SkillPerformer__RecordDamage_Hook);
+
 		//HookManager::install(app::BattleLogic_Skills_SkillPerformer__RecordMiss, BattleLogic_Skills_SkillPerformer__RecordMiss_Hook);
 
 		f_Miss = config::getValue("functions:GodMode:Miss", "enabled", false);
@@ -17,6 +17,7 @@ namespace cheat {
 		f_Zero = config::getValue("functions:GodMode:Zero", "enabled", false);
 		f_Multiplier = config::getValue("functions:GodMode:Multiplier", "enabled", false);
 		f_Multipliervalue = config::getValue("functions:GodMode:Multiplier", "value", 5.0f);
+		HookManager::install(app::BattleLogic_Skills_SkillPerformer__RecordDamage, BattleLogic_Skills_SkillPerformer__RecordDamage_Hook);
 	}
 
 	GodMode& GodMode::getInstance() {
@@ -27,6 +28,8 @@ namespace cheat {
 	void GodMode::GUI() {
 		ImGui::SeparatorText(_("GodMode"));
 		ConfigCheckbox(_("God Mode"), f_Enabled, _("Enables god mode, i.e. no incoming damage ."));
+		ImGui::SameLine();
+		f_Hotkey.Draw();
 
 
 		if (f_Enabled.getValue()) {
@@ -34,15 +37,13 @@ namespace cheat {
 			//ConfigCheckbox(_("Miss Mode"), f_Miss, _("Miss all the upcoming damage ."));
 			ConfigCheckbox(_("Zero Value Mode"), f_Zero, _("Zero damage received ."));
 			ConfigCheckbox(_("Multiplier Mode"), f_Multiplier, _("Multiplier Mode ."));
-			f_Hotkey.Draw();
+			if (f_Multiplier.getValue()) {
+				ConfigSliderFloat(_("Multiplier value"), f_Multipliervalue, 1.0f, 100.0f, _("Change the value of damage taken by the character"));
+			}
 			ImGui::Unindent();
 		}
 
-		if (f_Multiplier.getValue()) {
-			ImGui::Indent();
-			ConfigSliderFloat(_("Multiplier value"), f_Multipliervalue, 1.0f, 100.0f, _("Change the value of damage taken by the character"));
-			ImGui::Unindent();
-		}
+
 	}
 
 	void GodMode::Outer() {
@@ -50,31 +51,16 @@ namespace cheat {
 			f_Enabled.setValue(!f_Enabled.getValue());
 
 
-
-		if (f_Zero.getValue())
-		{
-			f_Multiplier.setValue(false);
-			//f_Miss.setValue(false);
-		}
-
-		if (f_Multiplier.getValue())
-		{
-			f_Zero.setValue(false);
-			//f_Miss.setValue(false);
-		}
-
-
 	}
 
 	void GodMode::Status() {
 		if (f_Enabled.getValue()) {
 			std::string status = "GodMode";
-			if (f_Zero.getValue()) {
+			if (f_Zero.getValue()) 
 				status += " | Zero";
-			}
 			else
 				if (f_Multiplier.getValue()) {
-					std::string multiplierValueStr = std::to_string(GodMode::f_Multipliervalue.getValue());
+					std::string multiplierValueStr = std::to_string(f_Multipliervalue.getValue());
 					status += (" | Multiplier | " + multiplierValueStr);
 				}
 			ImGui::Text(_(status.c_str()));
@@ -93,22 +79,10 @@ namespace cheat {
 
 		if (GodMode.f_Enabled.getValue() && app::BattleLogic_Models_BattleObject__get_Team(e) == app::BattleTeams__Enum::Bravo && app::BattleLogic_Models_BattleObject__get_Team(f) == app::BattleTeams__Enum::Alpha)
 			if (GodMode.f_Multiplier.getValue())
-			{
-
-				//float demage = a;
 				a = a / GodMode.f_Multipliervalue.getValue();
-				//LOG_DEBUG("GodMode: float a = %f >> %f", demage, a);
-
-
-			}
 			else if (GodMode.f_Zero.getValue())
-			{
-
-				//float demage = a;
 				a = 0.0f;
-				//LOG_DEBUG("GodMode: float a = %f >> %f", demage, a);
 
-			}
 
 
 

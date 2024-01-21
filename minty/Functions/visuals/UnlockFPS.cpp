@@ -21,6 +21,8 @@ namespace cheat {
 	void UnlockFPS::GUI() {
 		ImGui::SeparatorText(_("UnlockFPS"));
 		ConfigCheckbox(_("Unlock FPS"), f_Enabled, _("Unlocks higher framerate."));
+		ImGui::SameLine();
+		f_Hotkey.Draw();
 
 		if (f_Enabled.getValue()) {
 			ImGui::Indent();
@@ -31,7 +33,6 @@ namespace cheat {
 			if (f_EnabledLimit.getValue())
 				ConfigSliderInt(_("FPS Limit"), f_FpsLimit, 1, 360);
 
-			f_Hotkey.Draw();
 			ImGui::Unindent();
 		}
 	}
