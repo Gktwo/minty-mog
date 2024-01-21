@@ -23,7 +23,7 @@ void AddUnderLine(ImColor color) {
 void TextURL(const char* name_, const char* URL_, bool SameLineBefore_, bool SameLineAfter_) {
 	if (SameLineBefore_)
 		ImGui::SameLine(0.0f, ImGui::GetStyle().ItemInnerSpacing.x);
-	ImGui::PushStyleColor(ImGuiCol_Text, ImGui::GetStyle().Colors[ImGuiCol_ButtonHovered]);
+	ImGui::PushStyleColor(ImGuiCol_Text, { 0.17f, 0.63f, 0.45f, 1.00f });
 	ImGui::Text(name_);
 	ImGui::PopStyleColor();
 

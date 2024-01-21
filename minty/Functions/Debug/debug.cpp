@@ -25,6 +25,7 @@ namespace cheat {
 	}
 
 	void Debug::GUI() {
+		ImGui::SeparatorText(_("Debug"));
 		//ConfigCheckbox(_("IsPause"), f_Enabled, _("Debug ."));
 		//ConfigCheckbox(_("WipeEnemies"), f_WipeEnemies, _("Debug ."));
 		//ConfigCheckbox(_("time"), f_time, _("Debug ."));
@@ -98,14 +99,14 @@ namespace cheat {
 	}
 
 
-	static app::BattleLogic_BattleMatch_o* _debug;
+	static app::BattleLogic_BattleMatch_o* _thisMatch;
 
 
 	   void BattleLogic_BattleMatch__Update_HookDebug(app::BattleLogic_BattleMatch_o* __this) {
 	   auto& Debug = Debug::getInstance();
 
 
-	   _debug= __this;
+	   _thisMatch = __this;
 	   
 
 
@@ -122,12 +123,12 @@ namespace cheat {
 		LOG_INFO("SetResolution to %d x %d, fullscreen: %s", f_Resolutionwidth.getValue(), f_Resolutionheight.getValue(), f_Resolutionfullscreen.getValue() ? "true" : "false");
 	}
 	void Debug::Pause() {
-		app::BattleLogic_BattleMatch__Pause(_debug);
+		app::BattleLogic_BattleMatch__Pause(_thisMatch);
 
 		LOG_DEBUG("Game Paused");
 	}
 	void Debug::Resume() {
-		app::BattleLogic_BattleMatch__Resume(_debug);
+		app::BattleLogic_BattleMatch__Resume(_thisMatch);
 
 		LOG_DEBUG("Game Resumed");
 	}

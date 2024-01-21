@@ -19,6 +19,7 @@ namespace cheat {
 	}
 
 	void UnlockFPS::GUI() {
+		ImGui::SeparatorText(_("UnlockFPS"));
 		ConfigCheckbox(_("Unlock FPS"), f_Enabled, _("Unlocks higher framerate."));
 
 		if (f_Enabled.getValue()) {

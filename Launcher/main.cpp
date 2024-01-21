@@ -118,7 +118,7 @@ int main() {
     std::filesystem::path dll_path = current_dir.value() / "minty-mog.dll";
 
     if (!fs::is_regular_file(dll_path)) {
-        printf("Minty-MOG not found\n");
+        printf("minty-mog.dll not found\n");
         system("pause");
         return 0;
     }

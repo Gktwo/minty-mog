@@ -2470,6 +2470,20 @@ struct Network_BattleObjectId_o {
 struct Network_BattleObjectId_StaticFields {
     struct Network_BattleObjectId_o UndefinedId;
 };
+struct __declspec(align(8)) Network_Utility_IEffectStatus_Fields {
+};
+struct Network_Utility_IEffectStatus_c {
+    Il2CppClass_1 _1;
+    void* static_fields;
+    Il2CppRGCTXData* rgctx_data;
+    Il2CppClass_2 _2;
+    VirtualInvokeData vtable[32];
+};
+struct Network_Utility_IEffectStatus_o {
+    Network_Utility_IEffectStatus_c* klass;
+    void* monitor;
+    Network_Utility_IEffectStatus_Fields fields;
+};
 struct __declspec(align(8)) Network_Utility_SkillUsingStatus_Fields {
     struct Network_Utility_IEffectStatusBattleObject_o* _Caster_k__BackingField;
     struct Network_Utility_IEffectStatusBattleObject_o* _Receiver_k__BackingField;

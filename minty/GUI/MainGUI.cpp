@@ -15,8 +15,10 @@ namespace gui {
 
 	ImGui::SetNextWindowPos({ 480, 270 }, ImGuiCond_FirstUseEver);
 	ImGui::SetNextWindowSize({ 800, 500 }, ImGuiCond_FirstUseEver);
-
+    
+        ImGui::PushStyleColor(ImGuiCol_Text, { 0.17f, 0.63f, 0.45f, 1.00f });
         ImGui::Begin("Minty-MOG"); 
+        ImGui::PopStyleColor();
         ImGui::BeginGroup();
 
         static int SelectedSection = 0;

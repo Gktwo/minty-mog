@@ -49,8 +49,8 @@ enum class GameVersion {
 GameVersion getGameVersion() {
 
 	int version;
-	LOG_DEBUG("Please enter a number to select your game version");
-	LOG_DEBUG("\n TAIWAN : 1\n GLOBAL : 2 \n JAPAN : 3\n ");
+	LOG_WARNING("Please enter a number to select your game version");
+	LOG_WARNING("\n TAIWAN : 1\n GLOBAL : 2 \n JAPAN : 3\n ");
 
 	std::cin >> version;
 	switch (version) {
@@ -80,7 +80,7 @@ VOID init_il2cpp() {
 	auto gameVersion = getGameVersion();
 
 	if (gameVersion != GameVersion::NONE)
-		LOG_INFO("Selected version : %s",gameVersionToString(gameVersion).c_str());
+		LOG_WARNING("Selected version : %s",gameVersionToString(gameVersion).c_str());
 	else {
 		LOG_ERROR("Unknown version, please contact the developer or update the software.");
 		system("pause");
@@ -95,8 +95,10 @@ VOID init_il2cpp() {
 		if (GetModuleHandleA("GameAssembly.dll") != nullptr) {
 			baseAddress = (uint64_t)GetModuleHandleA("GameAssembly.dll");
 			unityPlayerAddress = (uint64_t)GetModuleHandleA("UnityPlayer.dll");
+
 			LOG_DEBUG("GameAssembly ptr: %p", baseAddress);
 			LOG_DEBUG("UnityPlayer ptr: %p", unityPlayerAddress);
+
 
 #define DO_API(a, b, c, r , n, p) n = (r (*) p)(baseAddress + SELECT_VERSION(gameVersion, a, b, c))
 #include "il2cpp-api-functions.h"

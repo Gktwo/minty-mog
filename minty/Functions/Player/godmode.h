@@ -8,7 +8,8 @@ namespace cheat {
 	ConfigField<bool> f_Enabled;
 
 	Hotkey f_Hotkey;
-
+	ConfigField<bool> f_Zero;
+	ConfigField<bool> f_Miss;
 	ConfigField<bool> f_Multiplier;
 	ConfigField<float> f_Multipliervalue;
 

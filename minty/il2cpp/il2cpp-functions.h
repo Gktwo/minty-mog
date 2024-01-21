@@ -34,6 +34,7 @@ DO_APP_FUNC(0x03196e50, 0x0, 0x0, void*, BattleLogic_BattleMatch__WipeEnemies, (
 DO_APP_FUNC(0x00d07bf0, 0x0, 0x0, app::String*, CaravanWa_Shared_MasterTable_SkillPowerMaster__GetPowerDisplayString, (app::CaravanWa_Shared_MasterTable_SkillPowerMaster_o* __this));
 //DO_APP_FUNC(0x028078c0, bool, BattleObjectModel__CanUseSpecialSkill, (app::BattleObjectModel_o* __this));
 DO_APP_FUNC(0x03194f80, 0x0, 0x0, bool, BattleLogic_BattleMatch__get_CanUseSpecialSkillAnytime, (app::BattleLogic_BattleMatch_o* __this));
+DO_APP_FUNC(0x03057d80, 0x0, 0x0, void, BattleLogic_Skills_SkillPerformer__RecordGiveSpecialPoint, (app::BattleLogic_Skills_SkillPerformer_o* __this, app::BattleLogic_Models_BattleObject_o* a, float b, int32_t c, app::Network_SkillActionType_o d, app::Network_Utility_IEffectStatus_o* e, app::BattleLogic_Skills_SkillPerformer_CalculatedParameters_o f));
 
 
 

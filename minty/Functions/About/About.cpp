@@ -8,8 +8,10 @@ namespace cheat {
 		ImGui::SeparatorText(_("About"));
 
 		ImGui::Text(_("Minty-MOG version : %s"), "0.9.0");
+		ImGui::Text(_("Game server support :  Taiwan  Global  Japan(x) Ver 2.2.0"));
 		ImGui::Text("ImGui version: %s", ImGui::GetVersion());
-		ImGui::Text("Design made  by Gktwo");
+		ImGui::Text("Founder : ");
+		TextURL("Gktwo", "https://github.com/Gktwo", true, false);
 
 		//ImGui::TextColored(ImVec4(235.0F / 255.0F, 64.0F / 255.0F, 52.0F / 255.0F, 1.0),
 		//	"%s: MintyGingy", _("ABOUT_OWNER"));
@@ -28,10 +30,12 @@ namespace cheat {
 
 
 		ImGui::Text("Minty-MOG Github: ");
-		TextURL("Link", "https://github.com/Gktwo/minty-mog", true, false);
+		TextURL("Github Download", "https://github.com/Gktwo/minty-mog", true, false);
 
+		
 		ImGui::Text("Minty Github: ");
-		TextURL("Link", "https://github.com/kindawindytoday", true, false);
+		TextURL("Minty Github", "https://github.com/kindawindytoday", true, false);
+
 	}
 
 	std::string About::getModule() {
